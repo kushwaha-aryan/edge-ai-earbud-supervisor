@@ -1,0 +1,29 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+*.pkl
+*.h5
+*.pt
+*.onnx
+*.tflite
+
+# --- Manually-downloaded / generated dataset & results (never-commit) ---
+data/raw/*
+data/processed/*
+results/*
+!results/.gitkeep
+
+# --- Notebooks (ignore checkpoints) ---
+.notebook_checkpoints/
+
+# --- OS / misc ---
+.DS_Store
+Thumbs.db
+*.log
+output/

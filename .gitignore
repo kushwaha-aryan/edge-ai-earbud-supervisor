@@ -18,6 +18,15 @@ data/raw/*
 data/processed/*
 results/*
 !results/.gitkeep
+# ...but manifests/metadata ARE tracked:
+!data/manifests/
+!data/manifests/**
+
+# --- Acquisition scratch / regenerable caches (never-commit) ---
+scripts/results/_validation/
+scripts/results/_tmp_*.py
+scripts/tmp_*.py
+urbansound8k_header.bin
 
 # --- Notebooks (ignore checkpoints) ---
 .notebook_checkpoints/

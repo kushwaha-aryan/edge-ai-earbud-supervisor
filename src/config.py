@@ -1,8 +1,16 @@
 """Global configuration and constants for the Edge AI Earbud Supervisor.
 
-Single source of truth for project paths, hyperparameters, and class labels.
+Single source of truth for project paths and fixed hyperparameters.
 Referenced by all other modules. Keep this file consistent with the
-FINAL_PROJECT_BLUEPRINT.md living specification.
+FINAL_PROJECT_BLUEPRINT.md living specification (Rev 2).
+
+Rev 2 note: the original fixed 3-class scheme (Class A continuous hum /
+Class B transient danger / Class C quiet) and the "exactly ~1,000 clips per
+class with equal final counts" dataset rule are SUPERSEDED by the
+user-selectable acoustic trigger architecture. See blueprint §1.3
+(historical record) and §5.2 (authoritative dataset requirements).
+The trigger class list and all per-class constants are therefore finalized
+in Phase 1 and are intentionally left unset here until then.
 """
 
 from pathlib import Path
@@ -30,58 +38,71 @@ N_MELS = 64                         # mel bands
 SPEC_SHAPE = (N_MELS, 63, 1)        # fixed 2D feature grid, padded/truncated
 
 # ---------------------------------------------------------------------------
-# Class mapping (Phase 1)
+# Trigger class mapping (Phase 1)
 # ---------------------------------------------------------------------------
-CLASS_LABELS = {
-    0: "Class A - Continuous Low-Freq Hum",
-    1: "Class B - Transient Danger Profile",
-    2: "Class C - Low-Amplitude Quiet",
-}
-CLASS_INDICES = {v: k for k, v in CLASS_LABELS.items()}
+# The final supported trigger class list is NOT fixed yet. It is selected in
+# Phase 1 from dataset investigation against the six criteria in blueprint
+# §5.1. Populate these from src/data/class_map.py once Phase 1 decides the
+# class set; do not hard-code a class list before then.
+TRIGGER_CLASS_NAMES: tuple[str, ...] = ()   # finalized in Phase 1
+TRIGGER_CLASS_TO_ID: dict[str, int] = {}    # finalized in Phase 1
+NUM_TRIGGER_CLASSES: int | None = None      # finalized in Phase 1
 
-# Authoritative dataset targets (FINAL_PROJECT_BLUEPRINT.md §5.2)
-TARGET_SAMPLES_PER_CLASS = 1000      # aim ~1000 good-quality clips per class
-FINAL_CLASS_COUNTS_EQUAL = True      # final A/B/C counts must be equal
+# Dataset requirements (blueprint §5.2, revised 2026-10-05):
+#   - each selected trigger class needs sufficient high-quality, diverse public
+#     data for reliable training and evaluation
+#   - classes reasonably balanced where practical
+#   - if a class is short, additional appropriate public sources are
+#     investigated before reducing or compromising quality
+#   - a dataset is never added merely to reach a numerical target
+# There is deliberately no fixed per-class sample-count constant here.
+MAX_ZERO_PAD_FRACTION: float | None = None  # limited-padding threshold, decided in Phase 1
 
-# Stratified split ratios (blueprint: 70/15/15)
+# Stratified split ratios (blueprint §6)
 TRAIN_RATIO = 0.70
 VAL_RATIO = 0.15
 TEST_RATIO = 0.15
 
-# Padding policy (blueprint §5.2): avoid heavy zero-padding of short clips
-MAX_ZERO_PAD_FRACTION = 0.20         # reject clips whose padding would exceed this
-
 # ---------------------------------------------------------------------------
-# Model architecture (Phase 3)
+# Model architecture (Phase 3) — final shape decided after Phase 1
 # ---------------------------------------------------------------------------
+# These are the original starting-candidate values from the source blueprint.
+# The output layer width must equal NUM_TRIGGER_CLASSES, which is not fixed yet,
+# and per-class weighting / recall targets are decided only after the class set
+# and dataset are established (blueprint §7 Phase 3).
 CONV1_FILTERS = 16
 CONV2_FILTERS = 32
 CONV3_FILTERS = 64
 DENSE_UNITS = 32
 DROPOUT_RATE = 0.3
-NUM_CLASSES = 3
 
 # Training configuration
 LEARNING_RATE = 1e-3
 BATCH_SIZE = 32
 MAX_EPOCHS = 50
 EARLY_STOPPING_PATIENCE = 5
-CLASS_WEIGHTS = {0: 1.0, 1: 2.0, 2: 1.0}   # weight Class B higher to bias vs false negatives
+CLASS_WEIGHTS: dict[int, float] | None = None   # decided in Phase 1/3
 
 # Evaluation targets
-TARGET_CLASS_B_RECALL = 0.90
-LATENCY_BUDGET_MS = 50
-INFERENCE_CADENCE_MS = 200                 # match WINDOW_SIZE_MS
+LATENCY_BUDGET_MS = 50                            # inference budget per window (design target)
+INFERENCE_CADENCE_MS = 200                        # match WINDOW_SIZE_MS
+# No per-class accuracy/recall targets are defined here: they must be derived
+# from the real dataset after Phase 1 (blueprint §7 Phase 3).
 
 # ---------------------------------------------------------------------------
-# Live capture (Phase 4) / routing (Phase 5)
+# Live capture (Phase 4) / trigger policy + routing (Phase 5)
 # ---------------------------------------------------------------------------
 MAX_DEVICE_CHANNELS = 1
 ROLLING_BUFFER_WINDOWS = 1
-DEBOUNCE_CONFIRM_WINDOWS = 3               # same class for N consecutive windows
-NO_DEBOUNCE_DANGER_THRESHOLD = 0.80        # high-confidence trigger for Class B
+# Temporal verification: a candidate trigger must persist for this many
+# consecutive windows before a mode switch (blueprint §7 Phase 5). Safety-
+# relevant triggers may instead require a single high-confidence window.
+TRIGGER_CONFIRM_WINDOWS = 3
+TRIGGER_RELEASE_SECONDS = 5                       # restore preferred mode after trigger absent
+TRIGGER_MIN_CONFIDENCE = 0.80                     # per-policy default threshold
 
-# 3-mode output behaviors (Phase 5, per Blueprint Section 3)
+# Audio-mode outputs (simulated; see blueprint §3). Modes remain valid; what
+# triggers them is the user's policy, not a fixed class identity.
 MODE_MAX_ANC = "Maximum ANC Mode"          # brown/pink noise mask playback
 MODE_SAFETY = "Safety Transparency Mode"   # direct unbuffered mic passthrough
 MODE_STANDBY = "Low-Power Standby Mode"    # reduced sampling rate loop

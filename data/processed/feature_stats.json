@@ -1,0 +1,49 @@
+{
+  "db_min": -100.0,
+  "db_max": 34.162593841552734,
+  "db_ref": 1.0,
+  "db_amin": 1e-10,
+  "db_top_db": null,
+  "sample_rate": 16000,
+  "n_fft": 1024,
+  "hop_length": 512,
+  "n_mels": 64,
+  "spec_frames": 5,
+  "spec_shape": [
+    64,
+    5,
+    1
+  ],
+  "window_samples": 3200,
+  "window_step": 1600,
+  "truncate_seconds": 15.0,
+  "silence_dbfs": -60.0,
+  "split_seed": 42,
+  "ratios": [
+    0.7,
+    0.15,
+    0.15
+  ],
+  "splits": {
+    "train": {
+      "clips": 7110,
+      "windows": 326550,
+      "raw_windows": 351405,
+      "dropped_silent": 24855
+    },
+    "val": {
+      "clips": 1577,
+      "windows": 74356,
+      "raw_windows": 79802,
+      "dropped_silent": 5446
+    },
+    "test": {
+      "clips": 1594,
+      "windows": 74025,
+      "raw_windows": 79129,
+      "dropped_silent": 5104
+    }
+  },
+  "elapsed_seconds": 506.4,
+  "limit": null
+}

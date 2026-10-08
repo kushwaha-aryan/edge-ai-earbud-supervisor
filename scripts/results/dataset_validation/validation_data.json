@@ -1,0 +1,5644 @@
+{
+ "thresholds": {
+  "extreme_short_s": 0.5,
+  "short_s": 1.0,
+  "long_s": 15.0,
+  "very_long_s": 30.0,
+  "silent_rms_dbfs": -60.0,
+  "low_energy_rms_dbfs": -45.0,
+  "clip_peak": 0.999,
+  "clip_fraction": 0.001
+ },
+ "inventory": {
+  "manifest_rows": 10565,
+  "unique_files": 10565,
+  "files_present": 10565,
+  "files_missing": 0,
+  "readable": 10565,
+  "unreadable": 0,
+  "zero_length": 0,
+  "extra_audio_on_disk_not_in_manifest": [],
+  "sha_mismatch_vs_manifest": 0,
+  "manifest_sha_duplicates": 0
+ },
+ "counts": {
+  "per_class": {
+   "Dog_Bark": 1000,
+   "Car_Engine": 1000,
+   "Jackhammer": 1000,
+   "Drilling": 1000,
+   "Siren": 929,
+   "Gunshot": 793,
+   "Alarm": 755,
+   "Footsteps": 585,
+   "Baby_Crying": 540,
+   "Glass_Breaking": 515,
+   "Help_Shouting": 498,
+   "Train": 468,
+   "Vehicle_Horn": 466,
+   "Knocking": 387,
+   "Aircraft": 338,
+   "Motorcycle": 238,
+   "Doorbell": 53
+  },
+  "per_source": {
+   "UrbanSound8K": 5732,
+   "FSD50K": 4027,
+   "owlgebra_babycry": 500,
+   "ESC-50": 306
+  },
+  "per_source_class": {
+   "ESC-50::Aircraft": 80,
+   "ESC-50::Alarm": 22,
+   "ESC-50::Baby_Crying": 40,
+   "ESC-50::Footsteps": 40,
+   "ESC-50::Glass_Breaking": 40,
+   "ESC-50::Knocking": 40,
+   "ESC-50::Train": 40,
+   "ESC-50::Vehicle_Horn": 4,
+   "FSD50K::Aircraft": 258,
+   "FSD50K::Alarm": 733,
+   "FSD50K::Doorbell": 53,
+   "FSD50K::Footsteps": 545,
+   "FSD50K::Glass_Breaking": 475,
+   "FSD50K::Gunshot": 419,
+   "FSD50K::Help_Shouting": 498,
+   "FSD50K::Knocking": 347,
+   "FSD50K::Motorcycle": 238,
+   "FSD50K::Train": 428,
+   "FSD50K::Vehicle_Horn": 33,
+   "UrbanSound8K::Car_Engine": 1000,
+   "UrbanSound8K::Dog_Bark": 1000,
+   "UrbanSound8K::Drilling": 1000,
+   "UrbanSound8K::Gunshot": 374,
+   "UrbanSound8K::Jackhammer": 1000,
+   "UrbanSound8K::Siren": 929,
+   "UrbanSound8K::Vehicle_Horn": 429,
+   "owlgebra_babycry::Baby_Crying": 500
+  }
+ },
+ "flag_counts": {
+  "missing": 0,
+  "zero_length": 0,
+  "unreadable": 0,
+  "extreme_short": 254,
+  "short": 608,
+  "long": 875,
+  "very_long": 3,
+  "silent": 30,
+  "low_energy": 308,
+  "clipped": 685,
+  "sha_mismatch": 0
+ },
+ "duplicates": {
+  "n_groups": 0,
+  "groups": [],
+  "cross_source": [],
+  "cross_class": []
+ },
+ "leakage": {
+  "n_source_groups": 5657,
+  "n_multi_clip_groups": 707,
+  "largest_groups": [
+   {
+    "group": "UrbanSound8K::24347",
+    "n_clips": 100,
+    "classes": [
+     "Siren"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::180937",
+    "n_clips": 95,
+    "classes": [
+     "Drilling",
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::72259",
+    "n_clips": 73,
+    "classes": [
+     "Vehicle_Horn"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::203929",
+    "n_clips": 72,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::62837",
+    "n_clips": 66,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::22883",
+    "n_clips": 62,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::162134",
+    "n_clips": 61,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::104998",
+    "n_clips": 59,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::22601",
+    "n_clips": 55,
+    "classes": [
+     "Siren"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::105029",
+    "n_clips": 50,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::125678",
+    "n_clips": 45,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::177537",
+    "n_clips": 45,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::30206",
+    "n_clips": 40,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::7389",
+    "n_clips": 35,
+    "classes": [
+     "Vehicle_Horn"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::144007",
+    "n_clips": 34,
+    "classes": [
+     "Car_Engine"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::144068",
+    "n_clips": 34,
+    "classes": [
+     "Car_Engine"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::178260",
+    "n_clips": 33,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::201652",
+    "n_clips": 32,
+    "classes": [
+     "Car_Engine"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::17578",
+    "n_clips": 32,
+    "classes": [
+     "Car_Engine"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::102857",
+    "n_clips": 31,
+    "classes": [
+     "Car_Engine"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::176787",
+    "n_clips": 31,
+    "classes": [
+     "Car_Engine"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::94632",
+    "n_clips": 31,
+    "classes": [
+     "Car_Engine"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::171305",
+    "n_clips": 31,
+    "classes": [
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::123688",
+    "n_clips": 30,
+    "classes": [
+     "Siren"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::77751",
+    "n_clips": 30,
+    "classes": [
+     "Drilling",
+     "Jackhammer"
+    ],
+    "datasets": [
+     "UrbanSound8K"
+    ]
+   }
+  ],
+  "cross_class_groups": [
+   {
+    "group": "UrbanSound8K::106905",
+    "n_clips": 7,
+    "classes": [
+     "Car_Engine",
+     "Siren"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::176638",
+    "n_clips": 5,
+    "classes": [
+     "Car_Engine",
+     "Vehicle_Horn"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::180937",
+    "n_clips": 95,
+    "classes": [
+     "Drilling",
+     "Jackhammer"
+    ]
+   },
+   {
+    "group": "UrbanSound8K::77751",
+    "n_clips": 30,
+    "classes": [
+     "Drilling",
+     "Jackhammer"
+    ]
+   }
+  ],
+  "babycry_subject_groups": 338,
+  "babycry_multi_clip_subjects": 32,
+  "babycry_max_subject_clips": 8
+ },
+ "duration": {
+  "overall": {
+   "min": 0.05,
+   "median": 4.0,
+   "mean": 5.539,
+   "max": 34.064,
+   "std": 5.645,
+   "total_hours": 16.26
+  },
+  "per_class": {
+   "Aircraft": {
+    "min": 0.907,
+    "median": 11.143,
+    "mean": 13.634,
+    "max": 30.0,
+    "std": 8.488,
+    "total_hours": 1.28
+   },
+   "Alarm": {
+    "min": 0.3,
+    "median": 6.625,
+    "mean": 9.509,
+    "max": 30.015,
+    "std": 7.899,
+    "total_hours": 1.99
+   },
+   "Baby_Crying": {
+    "min": 0.264,
+    "median": 5.0,
+    "mean": 4.425,
+    "max": 7.393,
+    "std": 2.697,
+    "total_hours": 0.66
+   },
+   "Car_Engine": {
+    "min": 0.767,
+    "median": 4.0,
+    "mean": 3.936,
+    "max": 4.0,
+    "std": 0.371,
+    "total_hours": 1.09
+   },
+   "Dog_Bark": {
+    "min": 0.12,
+    "median": 4.0,
+    "mean": 3.148,
+    "max": 4.0,
+    "std": 1.332,
+    "total_hours": 0.87
+   },
+   "Doorbell": {
+    "min": 0.367,
+    "median": 6.655,
+    "mean": 8.502,
+    "max": 29.283,
+    "std": 6.746,
+    "total_hours": 0.13
+   },
+   "Drilling": {
+    "min": 0.417,
+    "median": 4.0,
+    "mean": 3.546,
+    "max": 4.008,
+    "std": 1.007,
+    "total_hours": 0.99
+   },
+   "Footsteps": {
+    "min": 0.303,
+    "median": 6.704,
+    "mean": 8.508,
+    "max": 30.0,
+    "std": 7.159,
+    "total_hours": 1.38
+   },
+   "Glass_Breaking": {
+    "min": 0.313,
+    "median": 2.75,
+    "mean": 4.216,
+    "max": 27.738,
+    "std": 4.757,
+    "total_hours": 0.6
+   },
+   "Gunshot": {
+    "min": 0.166,
+    "median": 1.817,
+    "mean": 3.112,
+    "max": 30.0,
+    "std": 4.22,
+    "total_hours": 0.69
+   },
+   "Help_Shouting": {
+    "min": 0.405,
+    "median": 3.959,
+    "mean": 6.259,
+    "max": 29.751,
+    "std": 6.625,
+    "total_hours": 0.87
+   },
+   "Jackhammer": {
+    "min": 0.39,
+    "median": 4.0,
+    "mean": 3.611,
+    "max": 4.0,
+    "std": 0.886,
+    "total_hours": 1.0
+   },
+   "Knocking": {
+    "min": 0.33,
+    "median": 2.997,
+    "mean": 5.074,
+    "max": 27.892,
+    "std": 5.465,
+    "total_hours": 0.55
+   },
+   "Motorcycle": {
+    "min": 1.324,
+    "median": 13.008,
+    "mean": 14.363,
+    "max": 30.0,
+    "std": 7.624,
+    "total_hours": 0.95
+   },
+   "Siren": {
+    "min": 0.26,
+    "median": 4.0,
+    "mean": 3.91,
+    "max": 4.0,
+    "std": 0.503,
+    "total_hours": 1.01
+   },
+   "Train": {
+    "min": 0.603,
+    "median": 13.945,
+    "mean": 13.877,
+    "max": 34.064,
+    "std": 7.747,
+    "total_hours": 1.8
+   },
+   "Vehicle_Horn": {
+    "min": 0.05,
+    "median": 3.863,
+    "mean": 3.028,
+    "max": 30.0,
+    "std": 3.473,
+    "total_hours": 0.39
+   }
+  }
+ },
+ "sample_rates": {
+  "8000": 263,
+  "11025": 31,
+  "16000": 39,
+  "22050": 37,
+  "24000": 32,
+  "32000": 4,
+  "44100": 7989,
+  "48000": 1601,
+  "96000": 552,
+  "192000": 17
+ },
+ "channels": {
+  "1": 5199,
+  "2": 5366
+ },
+ "sample_rate_by_class": {
+  "Aircraft": {
+   "44100": 338
+  },
+  "Alarm": {
+   "44100": 755
+  },
+  "Baby_Crying": {
+   "44100": 277,
+   "8000": 263
+  },
+  "Car_Engine": {
+   "44100": 523,
+   "48000": 398,
+   "96000": 79
+  },
+  "Dog_Bark": {
+   "44100": 657,
+   "48000": 215,
+   "96000": 88,
+   "11025": 22,
+   "22050": 10,
+   "32000": 4,
+   "24000": 4
+  },
+  "Doorbell": {
+   "44100": 53
+  },
+  "Drilling": {
+   "44100": 700,
+   "48000": 122,
+   "96000": 102,
+   "24000": 28,
+   "22050": 25,
+   "192000": 17,
+   "16000": 6
+  },
+  "Footsteps": {
+   "44100": 585
+  },
+  "Glass_Breaking": {
+   "44100": 515
+  },
+  "Gunshot": {
+   "44100": 621,
+   "48000": 113,
+   "96000": 57,
+   "22050": 2
+  },
+  "Help_Shouting": {
+   "44100": 498
+  },
+  "Jackhammer": {
+   "44100": 543,
+   "48000": 246,
+   "96000": 211
+  },
+  "Knocking": {
+   "44100": 387
+  },
+  "Motorcycle": {
+   "44100": 238
+  },
+  "Siren": {
+   "44100": 506,
+   "48000": 402,
+   "16000": 12,
+   "11025": 9
+  },
+  "Train": {
+   "44100": 468
+  },
+  "Vehicle_Horn": {
+   "44100": 325,
+   "48000": 105,
+   "16000": 21,
+   "96000": 15
+  }
+ },
+ "channels_by_class": {
+  "Aircraft": {
+   "1": 338
+  },
+  "Alarm": {
+   "1": 755
+  },
+  "Baby_Crying": {
+   "1": 315,
+   "2": 225
+  },
+  "Car_Engine": {
+   "2": 916,
+   "1": 84
+  },
+  "Dog_Bark": {
+   "2": 861,
+   "1": 139
+  },
+  "Doorbell": {
+   "1": 53
+  },
+  "Drilling": {
+   "2": 859,
+   "1": 141
+  },
+  "Footsteps": {
+   "1": 585
+  },
+  "Glass_Breaking": {
+   "1": 515
+  },
+  "Gunshot": {
+   "1": 430,
+   "2": 363
+  },
+  "Help_Shouting": {
+   "1": 498
+  },
+  "Jackhammer": {
+   "2": 956,
+   "1": 44
+  },
+  "Knocking": {
+   "1": 387
+  },
+  "Motorcycle": {
+   "1": 238
+  },
+  "Siren": {
+   "2": 807,
+   "1": 122
+  },
+  "Train": {
+   "1": 468
+  },
+  "Vehicle_Horn": {
+   "2": 379,
+   "1": 87
+  }
+ },
+ "label_tables": {
+  "ESC-50": [
+   {
+    "original_label": "airplane",
+    "project_class": "Aircraft",
+    "n": 40
+   },
+   {
+    "original_label": "door_wood_knock",
+    "project_class": "Knocking",
+    "n": 40
+   },
+   {
+    "original_label": "crying_baby",
+    "project_class": "Baby_Crying",
+    "n": 40
+   },
+   {
+    "original_label": "glass_breaking",
+    "project_class": "Glass_Breaking",
+    "n": 40
+   },
+   {
+    "original_label": "footsteps",
+    "project_class": "Footsteps",
+    "n": 40
+   },
+   {
+    "original_label": "helicopter",
+    "project_class": "Aircraft",
+    "n": 40
+   },
+   {
+    "original_label": "train",
+    "project_class": "Train",
+    "n": 40
+   },
+   {
+    "original_label": "clock_alarm",
+    "project_class": "Alarm",
+    "n": 22
+   },
+   {
+    "original_label": "car_horn",
+    "project_class": "Vehicle_Horn",
+    "n": 4
+   }
+  ],
+  "FSD50K": [
+   {
+    "original_label": "Gunshot_and_gunfire,Explosion",
+    "project_class": "Gunshot",
+    "n": 388
+   },
+   {
+    "original_label": "Shatter,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 361
+   },
+   {
+    "original_label": "Walk_and_footsteps",
+    "project_class": "Footsteps",
+    "n": 345
+   },
+   {
+    "original_label": "Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 320
+   },
+   {
+    "original_label": "Alarm",
+    "project_class": "Alarm",
+    "n": 251
+   },
+   {
+    "original_label": "Knock,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 216
+   },
+   {
+    "original_label": "Screaming,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 193
+   },
+   {
+    "original_label": "Motorcycle,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 111
+   },
+   {
+    "original_label": "Fixed-wing_aircraft_and_airplane,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 89
+   },
+   {
+    "original_label": "Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 82
+   },
+   {
+    "original_label": "Yell,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 73
+   },
+   {
+    "original_label": "Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Alarm",
+    "n": 68
+   },
+   {
+    "original_label": "Knock,Wood,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 58
+   },
+   {
+    "original_label": "Shatter,Crushing,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 50
+   },
+   {
+    "original_label": "Motorcycle,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 38
+   },
+   {
+    "original_label": "Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 36
+   },
+   {
+    "original_label": "Bicycle_bell,Alarm,Bicycle,Vehicle,Bell",
+    "project_class": "Alarm",
+    "n": 34
+   },
+   {
+    "original_label": "Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Doorbell",
+    "n": 33
+   },
+   {
+    "original_label": "Knock,Door,Wood,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 33
+   },
+   {
+    "original_label": "Bicycle_bell,Bicycle,Vehicle,Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 31
+   },
+   {
+    "original_label": "Shatter,Chink_and_clink,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 28
+   },
+   {
+    "original_label": "Motor_vehicle_(road),Siren,Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 27
+   },
+   {
+    "original_label": "Siren,Alarm",
+    "project_class": "Alarm",
+    "n": 26
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 26
+   },
+   {
+    "original_label": "Fixed-wing_aircraft_and_airplane,Engine,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 22
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run",
+    "project_class": "Footsteps",
+    "n": 21
+   },
+   {
+    "original_label": "Motorcycle,Accelerating_and_revving_and_vroom,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 19
+   },
+   {
+    "original_label": "Screaming,Yell,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 16
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Yell,Speech,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 16
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 14
+   },
+   {
+    "original_label": "Sliding_door,Train,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Train",
+    "n": 13
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps",
+    "project_class": "Footsteps",
+    "n": 13
+   },
+   {
+    "original_label": "Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 12
+   },
+   {
+    "original_label": "Alarm,Keyboard_(musical),Musical_instrument,Music",
+    "project_class": "Alarm",
+    "n": 12
+   },
+   {
+    "original_label": "Applause,Crowd,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 10
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Vehicle_Horn",
+    "n": 10
+   },
+   {
+    "original_label": "Bell,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Alarm",
+    "n": 10
+   },
+   {
+    "original_label": "Bell,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Doorbell",
+    "n": 9
+   },
+   {
+    "original_label": "Cheering,Shout,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 8
+   },
+   {
+    "original_label": "Idling,Engine_starting,Motorcycle,Accelerating_and_revving_and_vroom,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 8
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 8
+   },
+   {
+    "original_label": "Human_group_actions,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 8
+   },
+   {
+    "original_label": "Engine,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 7
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Vehicle_Horn",
+    "n": 7
+   },
+   {
+    "original_label": "Walk_and_footsteps,Wind",
+    "project_class": "Footsteps",
+    "n": 7
+   },
+   {
+    "original_label": "Applause,Chatter,Crowd,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 7
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Speech,Human_voice",
+    "project_class": "Footsteps",
+    "n": 6
+   },
+   {
+    "original_label": "Engine_starting,Motorcycle,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 6
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Boom,Explosion",
+    "project_class": "Gunshot",
+    "n": 6
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Yell,Speech,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 6
+   },
+   {
+    "original_label": "Keyboard_(musical),Siren,Musical_instrument,Music,Alarm",
+    "project_class": "Alarm",
+    "n": 5
+   },
+   {
+    "original_label": "Chirp_and_tweet,Motorcycle,Engine,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 5
+   },
+   {
+    "original_label": "Shatter,Hammer,Glass,Tools",
+    "project_class": "Glass_Breaking",
+    "n": 5
+   },
+   {
+    "original_label": "Screech,Screaming,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 5
+   },
+   {
+    "original_label": "Shatter,Chink_and_clink,Thump_and_thud,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 5
+   },
+   {
+    "original_label": "Train,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 5
+   },
+   {
+    "original_label": "Walk_and_footsteps,Wood",
+    "project_class": "Footsteps",
+    "n": 5
+   },
+   {
+    "original_label": "Alarm,Truck,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 5
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Motor_vehicle_(road),Car,Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 5
+   },
+   {
+    "original_label": "Tick-tock,Alarm,Clock,Mechanisms",
+    "project_class": "Alarm",
+    "n": 5
+   },
+   {
+    "original_label": "Walk_and_footsteps,Slam,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 4
+   },
+   {
+    "original_label": "Alarm,Clock,Mechanisms",
+    "project_class": "Alarm",
+    "n": 4
+   },
+   {
+    "original_label": "Yell,Human_group_actions,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 4
+   },
+   {
+    "original_label": "Chatter,Fixed-wing_aircraft_and_airplane,Engine,Human_group_actions,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 4
+   },
+   {
+    "original_label": "Chirp_and_tweet,Aircraft,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Vehicle",
+    "project_class": "Aircraft",
+    "n": 4
+   },
+   {
+    "original_label": "Hiss,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 4
+   },
+   {
+    "original_label": "Chirp_and_tweet,Fixed-wing_aircraft_and_airplane,Engine,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 4
+   },
+   {
+    "original_label": "Bicycle_bell,Bell,Alarm,Bicycle,Vehicle",
+    "project_class": "Alarm",
+    "n": 4
+   },
+   {
+    "original_label": "Subway_and_metro_and_underground,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 4
+   },
+   {
+    "original_label": "Train,Vehicle,Rail_transport",
+    "project_class": "Train",
+    "n": 4
+   },
+   {
+    "original_label": "Applause,Chatter,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 4
+   },
+   {
+    "original_label": "Subway_and_metro_and_underground,Doorbell,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Alarm",
+    "n": 4
+   },
+   {
+    "original_label": "Motorcycle,Traffic_noise_and_roadway_noise,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 4
+   },
+   {
+    "original_label": "Screaming,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 4
+   },
+   {
+    "original_label": "Screech,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 4
+   },
+   {
+    "original_label": "Screaming,Crying_and_sobbing,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 4
+   },
+   {
+    "original_label": "Alarm,Train,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 3
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 3
+   },
+   {
+    "original_label": "Applause,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 3
+   },
+   {
+    "original_label": "Walk_and_footsteps,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 3
+   },
+   {
+    "original_label": "Walk_and_footsteps,Splash_and_splatter,Liquid",
+    "project_class": "Footsteps",
+    "n": 3
+   },
+   {
+    "original_label": "Applause,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 3
+   },
+   {
+    "original_label": "Alarm,Truck,Boat_and_Water_vehicle,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 3
+   },
+   {
+    "original_label": "Shatter,Thump_and_thud,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 3
+   },
+   {
+    "original_label": "Bus,Alarm,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 3
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Speech,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 3
+   },
+   {
+    "original_label": "Chatter,Bicycle_bell,Human_group_actions,Bicycle,Vehicle,Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 3
+   },
+   {
+    "original_label": "Knock,Tap,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 3
+   },
+   {
+    "original_label": "Idling,Motorcycle,Accelerating_and_revving_and_vroom,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 3
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Fireworks,Explosion",
+    "project_class": "Gunshot",
+    "n": 3
+   },
+   {
+    "original_label": "Engine,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 3
+   },
+   {
+    "original_label": "Chatter,Fixed-wing_aircraft_and_airplane,Human_group_actions,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 3
+   },
+   {
+    "original_label": "Wind,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 3
+   },
+   {
+    "original_label": "Waves_and_surf,Aircraft,Vehicle,Ocean,Water",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Walk_and_footsteps,Tap,Zipper_(clothing),Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Walk_and_footsteps,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Walk_and_footsteps,Cricket,Insect,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Walk_and_footsteps,Bird,Bird_vocalization_and_bird_call_and_bird_song,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Applause,Screaming,Chatter,Crowd,Cheering,Clapping,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Applause,Screaming,Crowd,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Train,Rail_transport,Vehicle,Motor_vehicle_(road)",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Train,Bicycle,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Train,Bird_vocalization_and_bird_call_and_bird_song,Rail_transport,Vehicle,Bird,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Train,Breathing,Rail_transport,Vehicle,Respiratory_sounds",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Subway_and_metro_and_underground,Alarm,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Subway_and_metro_and_underground,Doorbell,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Doorbell",
+    "n": 2
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Chatter,Human_group_actions",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Run",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Speech,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Bicycle_bell,Traffic_noise_and_roadway_noise,Bicycle,Vehicle,Alarm,Bell,Motor_vehicle_(road)",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Shatter,Liquid,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 2
+   },
+   {
+    "original_label": "Cheering,Yell,Human_group_actions,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Child_speech_and_kid_speaking,Train,Rail_transport,Vehicle,Speech,Human_voice",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Chirp_and_tweet,Engine,Aircraft,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Vehicle",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Chirp_and_tweet,Gunshot_and_gunfire,Explosion,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Gunshot",
+    "n": 2
+   },
+   {
+    "original_label": "Yell,Crying_and_sobbing,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Shatter,Explosion,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 2
+   },
+   {
+    "original_label": "Bell,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Bicycle_bell,Doorbell,Bicycle,Vehicle,Alarm,Bell,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Doorbell",
+    "n": 2
+   },
+   {
+    "original_label": "Shatter,Boom,Glass,Explosion",
+    "project_class": "Glass_Breaking",
+    "n": 2
+   },
+   {
+    "original_label": "Run,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Screaming,Crowd,Cheering,Human_voice,Human_group_actions",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Screaming,Fireworks,Human_voice,Explosion",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Screaming,Gasp,Human_voice,Breathing,Respiratory_sounds",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Motorcycle,Traffic_noise_and_roadway_noise,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 2
+   },
+   {
+    "original_label": "Rattle,Gunshot_and_gunfire,Explosion",
+    "project_class": "Gunshot",
+    "n": 2
+   },
+   {
+    "original_label": "Rattle,Knock,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 2
+   },
+   {
+    "original_label": "Chatter,Engine,Aircraft,Human_group_actions,Vehicle",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Chatter,Human_group_actions,Vehicle,Engine,Aircraft",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Chatter,Yell,Human_group_actions,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Microwave_oven,Alarm,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Conversation,Speech,Human_voice",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Shatter,Speech,Human_voice,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 2
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Fixed-wing_aircraft_and_airplane,Engine,Speech,Human_voice,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Bicycle_bell,Speech,Human_voice,Bicycle,Vehicle,Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Knock,Tools,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 2
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Alarm,Speech,Human_voice",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Knock,Dishes_and_pots_and_pans,Domestic_sounds_and_home_sounds,Door",
+    "project_class": "Knocking",
+    "n": 2
+   },
+   {
+    "original_label": "Knock,Slam,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 2
+   },
+   {
+    "original_label": "Idling,Aircraft,Engine,Vehicle",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Idling,Engine_starting,Motorcycle,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 2
+   },
+   {
+    "original_label": "Idling,Motorcycle,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 2
+   },
+   {
+    "original_label": "Hiss,Alarm,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Cricket,Train,Rail_transport,Vehicle,Insect,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 2
+   },
+   {
+    "original_label": "Chatter,Alarm,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Fixed-wing_aircraft_and_airplane,Vehicle,Aircraft",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Glass,Gunshot_and_gunfire,Explosion",
+    "project_class": "Gunshot",
+    "n": 2
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Explosion,Vehicle,Engine,Aircraft",
+    "project_class": "Aircraft",
+    "n": 2
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Subway_and_metro_and_underground,Alarm,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Speech,Human_voice",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Bicycle_bell,Speech,Human_voice,Bicycle,Vehicle,Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Shout,Speech,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 2
+   },
+   {
+    "original_label": "Doorbell,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Doorbell,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Doorbell",
+    "n": 2
+   },
+   {
+    "original_label": "Engine_starting,Motorcycle,Accelerating_and_revving_and_vroom,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 2
+   },
+   {
+    "original_label": "Alarm,Mechanisms",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Walk_and_footsteps,Waves_and_surf,Ocean,Water",
+    "project_class": "Footsteps",
+    "n": 2
+   },
+   {
+    "original_label": "Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Alarm,Boat_and_Water_vehicle,Vehicle",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 2
+   },
+   {
+    "original_label": "Yell,Traffic_noise_and_roadway_noise,Shout,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Car,Vehicle,Motor_vehicle_(road)",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Mechanisms,Car,Thump_and_thud,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Mechanisms,Doorbell,Bicycle,Door,Domestic_sounds_and_home_sounds,Alarm,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Mechanisms,Thump_and_thud,Bicycle,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Microwave_oven,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Run,Child_speech_and_kid_speaking,Train,Rail_transport,Vehicle,Human_group_actions,Speech,Human_voice",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Sliding_door,Slam,Alarm,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Sliding_door,Slam,Alarm,Train,Bicycle,Rail_transport,Vehicle,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Subway_and_metro_and_underground,Alarm,Bell,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Subway_and_metro_and_underground,Alarm,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Traffic_noise_and_roadway_noise,Hiss,Vehicle_horn_and_car_horn_and_honking,Alarm,Truck,Shout,Car,Motor_vehicle_(road),Vehicle,Human_group_actions,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Traffic_noise_and_roadway_noise,Train,Rail_transport,Vehicle,Human_group_actions,Motor_vehicle_(road)",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Engine,Car,Motor_vehicle_(road),Vehicle,Alarm,Human_group_actions",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Train,Rail_transport,Vehicle,Human_group_actions",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Water,Alarm,Train,Rail_transport,Vehicle,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Water,Train,Rail_transport,Vehicle,Human_group_actions",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Writing,Doorbell,Domestic_sounds_and_home_sounds,Door,Alarm",
+    "project_class": "Doorbell",
+    "n": 1
+   },
+   {
+    "original_label": "Engine_starting,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Fart,Siren,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Motorcycle,Traffic_noise_and_roadway_noise,Engine,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Traffic_noise_and_roadway_noise,Conversation,Vehicle_horn_and_car_horn_and_honking,Engine,Crow,Alarm,Car,Motor_vehicle_(road),Vehicle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Speech,Human_voice",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Train,Rail_transport,Vehicle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Vehicle_horn_and_car_horn_and_honking,Train,Alarm,Car,Motor_vehicle_(road),Vehicle,Rail_transport,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Stream,Trickle_and_dribble,Wind,Water,Pour,Liquid",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Stream,Water",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Subway_and_metro_and_underground,Rail_transport,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Keyboard_(musical),Truck,Train,Musical_instrument,Music,Motor_vehicle_(road),Vehicle,Rail_transport",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Truck,Ocean,Boat_and_Water_vehicle,Motor_vehicle_(road),Vehicle,Water",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Chatter,Cheering,Clapping,Guitar,Shout,Plucked_string_instrument,Musical_instrument,Music,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Chatter,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Chatter,Crowd,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Idling,Train,Speech,Human_voice,Rail_transport,Vehicle,Engine",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Marimba_and_xylophone,Subway_and_metro_and_underground,Hiss,Alarm,Speech,Human_voice,Mallet_percussion,Percussion,Musical_instrument,Music,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Rattle,Chatter,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Screaming,Conversation,Bus,Engine,Crying_and_sobbing,Speech,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Sneeze,Chatter,Subway_and_metro_and_underground,Conversation,Alarm,Speech,Human_voice,Respiratory_sounds,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Crowd,Alarm,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Crowd,Cheering,Alarm,Bell,Truck,Motor_vehicle_(road),Vehicle,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Crowd,Cheering,Car_passing_by,Alarm,Human_group_actions,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Crowd,Cheering,Conversation,Alarm,Human_group_actions,Speech,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Crowd,Gunshot_and_gunfire,Siren,Explosion,Alarm,Human_group_actions",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Crowd,Yell,Human_group_actions,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Cutlery_and_silverware,Knock,Chink_and_clink,Domestic_sounds_and_home_sounds,Glass,Door",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Cutlery_and_silverware,Knock,Dishes_and_pots_and_pans,Domestic_sounds_and_home_sounds,Door",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Cutlery_and_silverware,Knock,Domestic_sounds_and_home_sounds,Door",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Dishes_and_pots_and_pans,Chatter,Fixed-wing_aircraft_and_airplane,Engine,Domestic_sounds_and_home_sounds,Human_group_actions,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Electric_guitar,Walk_and_footsteps,Crash_cymbal,Engine_starting,Motorcycle,Accelerating_and_revving_and_vroom,Guitar,Plucked_string_instrument,Musical_instrument,Music,Cymbal,Percussion,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Chirp_and_tweet,Conversation,Speech,Human_voice,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Chirp_and_tweet,Train,Speech,Human_voice,Rail_transport,Vehicle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Chuckle_and_chortle,Slam,Doorbell,Speech,Human_voice,Laughter,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Doorbell",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Sliding_door,Alarm,Speech,Human_voice,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Subway_and_metro_and_underground,Sliding_door,Alarm,Speech,Human_voice,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Train,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Whispering,Speech,Human_voice",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Alarm,Train,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Chatter,Accelerating_and_revving_and_vroom,Bell,Train,Speech,Human_voice,Rail_transport,Vehicle,Human_group_actions,Engine",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Chatter,Fixed-wing_aircraft_and_airplane,Engine,Speech,Human_voice,Human_group_actions,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Chatter,Sliding_door,Alarm,Train,Speech,Human_voice,Rail_transport,Vehicle,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Cheering,Clapping,Shout,Music,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Chirp_and_tweet,Traffic_noise_and_roadway_noise,Hiss,Train,Speech,Human_voice,Rail_transport,Vehicle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Motor_vehicle_(road)",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Chirp_and_tweet,Train,Speech,Human_voice,Rail_transport,Vehicle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Crumpling_and_crinkling,Train,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Human_group_actions,Train,Shout,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Glockenspiel,Harp,Alarm,Keyboard_(musical),Musical_instrument,Music,Mallet_percussion,Percussion",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Gull_and_seagull,Alarm,Engine,Bird,Wild_animals,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Gull_and_seagull,Train,Rail_transport,Vehicle,Bird,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Bird_vocalization_and_bird_call_and_bird_song,Crow,Bird,Wild_animals,Animal,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Fireworks,Boom,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Human_group_actions,Shout,Explosion,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Keyboard_(musical),Explosion,Musical_instrument,Music",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Shout,Explosion,Human_voice",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Gunshot_and_gunfire,Tools,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Speech_synthesizer,Subway_and_metro_and_underground,Alarm,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Subway_and_metro_and_underground,Sliding_door,Hiss,Alarm,Speech,Human_voice,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Subway_and_metro_and_underground,Sliding_door,Slam,Alarm,Speech,Human_voice,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Subway_and_metro_and_underground,Sliding_door,Slam,Hiss,Alarm,Bell,Speech,Human_voice,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Train,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Chatter,Crow,Speech,Human_voice,Human_group_actions,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Female_speech_and_woman_speaking,Walk_and_footsteps,Chatter,Subway_and_metro_and_underground,Speech,Human_voice,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Crowd,Laughter,Shout,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Crowd,Shout,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Alarm,Bell,Engine,Human_group_actions,Train,Shout,Rail_transport,Vehicle,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Alarm,Mechanisms,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Bus,Vehicle_horn_and_car_horn_and_honking,Bell,Alarm,Car,Motor_vehicle_(road),Vehicle,Human_group_actions",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Bus,Vehicle_horn_and_car_horn_and_honking,Engine,Alarm,Car,Motor_vehicle_(road),Vehicle,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Car_passing_by,Motorcycle,Traffic_noise_and_roadway_noise,Accelerating_and_revving_and_vroom,Human_group_actions,Car,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Car_passing_by,Traffic_noise_and_roadway_noise,Aircraft,Human_group_actions,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Child_speech_and_kid_speaking,Train,Bird_vocalization_and_bird_call_and_bird_song,Rail_transport,Vehicle,Human_group_actions,Bird,Wild_animals,Animal,Speech,Human_voice",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Chirp_and_tweet,Engine,Aircraft,Human_group_actions,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Chirp_and_tweet,Fixed-wing_aircraft_and_airplane,Engine,Human_group_actions,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Chirp_and_tweet,Train,Dog,Music,Rail_transport,Vehicle,Human_group_actions,Domestic_animals_and_pets,Animal,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Fixed-wing_aircraft_and_airplane,Alarm,Engine,Aircraft,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Fixed-wing_aircraft_and_airplane,Alarm,Engine,Shout,Human_voice,Aircraft,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Fixed-wing_aircraft_and_airplane,Engine,Boat_and_Water_vehicle,Frog,Aircraft,Vehicle,Wild_animals,Animal",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Fixed-wing_aircraft_and_airplane,Mechanisms,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Hiss,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Hiss,Alarm,Keyboard_(musical),Thump_and_thud,Boom,Musical_instrument,Music,Explosion",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Aircraft,Human_group_actions,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Church_bell,Alarm,Car,Motor_vehicle_(road),Vehicle,Bell",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Clock,Doorbell,Mechanisms,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Coin_(dropping),Alarm,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Coin_(dropping),Walk_and_footsteps,Chatter,Domestic_sounds_and_home_sounds,Human_group_actions",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Coin_(dropping),Walk_and_footsteps,Zipper_(clothing),Conversation,Bus,Alarm,Engine,Domestic_sounds_and_home_sounds,Speech,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Conversation,Bus,Alarm,Engine,Speech,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Crack,Chirp_and_tweet,Wind,Bird,Human_group_actions,Shout,Wild_animals,Animal,Human_voice,Bird_vocalization_and_bird_call_and_bird_song",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Cricket,Alarm,Truck,Motor_vehicle_(road),Vehicle,Insect,Wild_animals,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Cricket,Motorcycle,Engine,Insect,Wild_animals,Animal,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Cricket,Train,Bird_vocalization_and_bird_call_and_bird_song,Rail_transport,Vehicle,Bird,Wild_animals,Animal,Insect",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Gunshot_and_gunfire,Shout,Explosion,Human_voice,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Human_group_actions,Shout,Human_voice,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Crowd,Clapping,Wind,Siren,Alarm,Human_group_actions,Hands",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Splash_and_splatter,Liquid,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Stream,Traffic_noise_and_roadway_noise,Water,Motor_vehicle_(road),Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Chuckle_and_chortle,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Human_group_actions,Laughter,Human_voice",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Crowd,Cheering,Clapping,Laughter,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Crowd,Cheering,Laughter,Shout,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Hiss,Engine,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Hiss,Gunshot_and_gunfire,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Hiss,Train,Rail_transport,Vehicle,Water",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Hiss,Train,Thump_and_thud,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Human_group_actions,Truck,Shout,Motor_vehicle_(road),Vehicle,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Idling,Engine_starting,Aircraft,Engine,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Idling,Motorcycle,Traffic_noise_and_roadway_noise,Accelerating_and_revving_and_vroom,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Idling,Motorcycle,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Idling,Truck,Train,Motor_vehicle_(road),Vehicle,Rail_transport,Engine",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Idling,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Hiss,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Applause,Chatter,Crowd,Cheering,Alarm,Speech,Human_voice,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Applause,Cheering,Clapping,Conversation,Shout,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Applause,Crowd,Cheering,Clapping,Alarm,Truck,Speech,Human_voice,Human_group_actions,Motor_vehicle_(road),Vehicle,Hands",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Applause,Crowd,Cheering,Clapping,Shout,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Keys_jangling,Alarm,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Keys_jangling,Car_passing_by,Traffic_noise_and_roadway_noise,Alarm,Car,Motor_vehicle_(road),Vehicle,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Chatter,Boat_and_Water_vehicle,Music,Human_group_actions,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Chatter,Door,Domestic_sounds_and_home_sounds,Human_group_actions",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Crowd,Door,Domestic_sounds_and_home_sounds,Human_group_actions",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Dishes_and_pots_and_pans,Child_speech_and_kid_speaking,Singing,Domestic_sounds_and_home_sounds,Human_voice,Speech,Door",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Drip,Toilet_flush,Liquid,Domestic_sounds_and_home_sounds,Door",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Hammer,Wood,Door,Domestic_sounds_and_home_sounds,Tools",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Run,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Sink_(filling_or_washing),Water_tap_and_faucet,Domestic_sounds_and_home_sounds,Door",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Slam,Wood,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Chatter,Human_group_actions,Shout,Livestock_and_farm_animals_and_working_animals,Speech,Human_voice,Animal",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Chatter,Yell,Conversation,Human_group_actions,Speech,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Church_bell,Vehicle_horn_and_car_horn_and_honking,Crow,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Bell,Bird,Wild_animals,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Computer_keyboard,Alarm,Speech,Human_voice,Typing,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Crowd,Cheering,Clapping,Alarm,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Applause,Cheering,Clapping,Shout,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Stream,Trickle_and_dribble,Traffic_noise_and_roadway_noise,Child_speech_and_kid_speaking,Bird_vocalization_and_bird_call_and_bird_song,Water,Bird,Wild_animals,Animal,Pour,Liquid,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Tap,Wood,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Thump_and_thud,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Tick-tock,Clock,Mechanisms,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Traffic_noise_and_roadway_noise,Door,Domestic_sounds_and_home_sounds,Motor_vehicle_(road),Vehicle",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Whispering,Human_voice,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Wood,Percussion,Musical_instrument,Music,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Knock,Wood,Tools,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Aircraft,Speech,Human_voice,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Alarm,Keyboard_(musical),Speech,Human_voice,Musical_instrument,Music",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Conversation,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Subway_and_metro_and_underground,Sliding_door,Slam,Hiss,Alarm,Speech,Human_voice,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Walk_and_footsteps,Chatter,Singing,Speech,Human_voice,Human_group_actions",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Walk_and_footsteps,Conversation,Laughter,Speech,Human_voice",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Yell,Speech,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Gunshot_and_gunfire,Keyboard_(musical),Speech,Human_voice,Explosion,Musical_instrument,Music",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Gunshot_and_gunfire,Shout,Speech,Human_voice,Explosion",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Applause,Screaming,Chatter,Cheering,Clapping,Shout,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Applause,Yell,Alarm,Human_group_actions,Laughter,Shout,Speech,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Bicycle_bell,Traffic_noise_and_roadway_noise,Speech,Human_voice,Bicycle,Vehicle,Alarm,Bell,Motor_vehicle_(road)",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Bus,Alarm,Engine,Speech,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Chatter,Bus,Accelerating_and_revving_and_vroom,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Human_group_actions,Engine",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Chatter,Chirp_and_tweet,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Human_group_actions,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Chatter,Crowd,Cheering,Clapping,Shout,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Chatter,Engine_starting,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Laughter,Car,Motor_vehicle_(road),Vehicle,Alarm,Speech,Human_voice,Human_group_actions,Engine",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Chatter,Female_singing,Tambourine,Vehicle_horn_and_car_horn_and_honking,Drum,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Percussion,Musical_instrument,Music,Human_group_actions,Singing",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Screaming,Chatter,Crowd,Speech,Human_voice,Human_group_actions",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Screaming,Crowd,Crying_and_sobbing,Speech,Human_voice,Human_group_actions",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Screaming,Crumpling_and_crinkling,Speech,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Screaming,Crying_and_sobbing,Speech,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Screaming,Speech,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Shatter,Whispering,Speech,Human_voice,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Shout,Speech,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Siren,Speech,Human_voice,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Applause,Crowd,Cheering,Clapping,Shout,Speech,Human_voice,Human_group_actions,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Applause,Screaming,Chatter,Cheering,Laughter,Speech,Human_voice,Human_group_actions",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Bark,Crowd,Motorcycle,Speech,Human_voice,Dog,Domestic_animals_and_pets,Animal,Human_group_actions,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Chatter,Conversation,Train,Speech,Human_voice,Rail_transport,Vehicle,Human_group_actions",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Chatter,Fixed-wing_aircraft_and_airplane,Conversation,Engine,Speech,Human_voice,Human_group_actions,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Chatter,Subway_and_metro_and_underground,Alarm,Speech,Human_voice,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Chatter,Subway_and_metro_and_underground,Sliding_door,Alarm,Laughter,Speech,Human_voice,Human_group_actions,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Female_speech_and_woman_speaking,Chatter,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Bell,Wind_instrument_and_woodwind_instrument,Drum,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Musical_instrument,Music,Percussion,Human_group_actions",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Subway_and_metro_and_underground,Alarm,Cough,Speech,Human_voice,Rail_transport,Vehicle,Respiratory_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Subway_and_metro_and_underground,Hiss,Doorbell,Speech,Human_voice,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Doorbell",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Subway_and_metro_and_underground,Train,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Engine,Car,Motor_vehicle_(road),Vehicle,Alarm,Speech,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Train,Speech,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Chatter,Church_bell,Engine,Bird_vocalization_and_bird_call_and_bird_song,Speech,Human_voice,Human_group_actions,Bird,Wild_animals,Animal,Bell",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Chatter,Church_bell,Speech,Human_voice,Human_group_actions,Bell",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Chatter,Trickle_and_dribble,Gurgling,Speech,Human_voice,Human_group_actions,Pour,Liquid,Water",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Child_speech_and_kid_speaking,Vehicle_horn_and_car_horn_and_honking,Dog,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice,Domestic_animals_and_pets,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Idling,Motorcycle,Accelerating_and_revving_and_vroom,Speech,Human_voice,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Male_singing,Alarm,Car,Speech,Human_voice,Motor_vehicle_(road),Vehicle,Singing",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Motorcycle,Alarm,Engine,Speech,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Motorcycle,Engine,Speech,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Motorcycle,Motor_vehicle_(road),Engine,Siren,Vehicle,Speech,Human_voice,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Motorcycle,Motor_vehicle_(road),Wind,Engine,Siren,Vehicle,Speech,Human_voice,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Rattle,Chatter,Train,Speech,Human_voice,Rail_transport,Vehicle,Human_group_actions",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Yell,Motor_vehicle_(road),Siren,Vehicle,Speech,Human_voice,Alarm,Shout",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Mechanical_fan,Train,Mechanisms,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Mechanisms,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Meow,Walk_and_footsteps,Cat,Domestic_animals_and_pets,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Motor_vehicle_(road),Siren,Aircraft,Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Motor_vehicle_(road),Train,Vehicle,Rail_transport",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Accelerating_and_revving_and_vroom,Bell,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Accelerating_and_revving_and_vroom,Bird,Wild_animals,Animal,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Accelerating_and_revving_and_vroom,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Bird,Engine,Wild_animals,Animal,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Sliding_door,Alarm,Speech,Human_voice,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Sliding_door,Run,Hiss,Train,Speech,Human_voice,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Squeak,Chatter,Subway_and_metro_and_underground,Hiss,Alarm,Wind_instrument_and_woodwind_instrument,Speech,Human_voice,Musical_instrument,Music,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Squeak,Female_speech_and_woman_speaking,Walk_and_footsteps,Chatter,Subway_and_metro_and_underground,Alarm,Cough,Speech,Human_voice,Human_group_actions,Rail_transport,Vehicle,Respiratory_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Squeak,Walk_and_footsteps,Sneeze,Hiss,Alarm,Engine,Truck,Speech,Human_voice,Respiratory_sounds,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Squeak,Walk_and_footsteps,Subway_and_metro_and_underground,Sliding_door,Hiss,Alarm,Speech,Human_voice,Door,Domestic_sounds_and_home_sounds,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Engine,Crow,Bird,Wild_animals,Animal,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Engine,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Engine,Laughter,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Engine,Splash_and_splatter,Liquid,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Human_group_actions,Rain,Water,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Human_voice,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Rain,Water,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Tearing,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Traffic_noise_and_roadway_noise,Accelerating_and_revving_and_vroom,Car,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Traffic_noise_and_roadway_noise,Accelerating_and_revving_and_vroom,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Raindrop,Run,Motor_vehicle_(road),Siren,Breathing,Thump_and_thud,Vehicle,Speech,Human_voice,Alarm,Rain,Water,Respiratory_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Run,Breathing,Speech,Human_voice,Respiratory_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Stream,Chirp_and_tweet,Bird,Fowl,Speech,Human_voice,Wild_animals,Animal,Water,Bird_vocalization_and_bird_call_and_bird_song,Livestock_and_farm_animals_and_working_animals",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Walk_and_footsteps,Yell,Speech,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Male_speech_and_man_speaking,Yell,Laughter,Speech,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Crow,Bird,Wild_animals,Animal,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Crushing,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Engine,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Crumpling_and_crinkling,Fixed-wing_aircraft_and_airplane,Engine,Human_group_actions,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Engine,Shout,Aircraft,Human_group_actions,Human_voice,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Fixed-wing_aircraft_and_airplane,Alarm,Engine,Human_group_actions,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Fixed-wing_aircraft_and_airplane,Conversation,Human_group_actions,Aircraft,Vehicle,Speech,Human_voice",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Fixed-wing_aircraft_and_airplane,Engine,Laughter,Human_group_actions,Human_voice,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Gunshot_and_gunfire,Explosion,Human_group_actions,Vehicle,Engine,Aircraft",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Idling,Motorcycle,Accelerating_and_revving_and_vroom,Human_group_actions,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Motorcycle,Accelerating_and_revving_and_vroom,Alarm,Truck,Motor_vehicle_(road),Vehicle,Human_group_actions,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Motorcycle,Accelerating_and_revving_and_vroom,Human_group_actions,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Chatter,Whoosh_and_swoosh_and_swish,Gunshot_and_gunfire,Explosion,Human_group_actions",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Cheering,Clapping,Child_speech_and_kid_speaking,Shout,Human_group_actions,Human_voice,Hands,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Cheering,Human_voice,Shout,Human_group_actions",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Crowd,Human_voice,Human_group_actions",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Engine,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Vehicle,Motor_vehicle_(road)",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Wind,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Race_car_and_auto_racing,Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Rain,Train,Water,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Raindrop,Trickle_and_dribble,Vehicle_horn_and_car_horn_and_honking,Rain,Car,Motor_vehicle_(road),Vehicle,Alarm,Water,Pour,Liquid",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Alarm,Thump_and_thud",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Doorbell",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Knock,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Knock,Wood,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Screech,Walk_and_footsteps,Run,Slam,Traffic_noise_and_roadway_noise,Chink_and_clink,Door,Domestic_sounds_and_home_sounds,Motor_vehicle_(road),Vehicle,Glass",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Walk_and_footsteps",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Walk_and_footsteps,Drawer_open_or_close,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Child_speech_and_kid_speaking,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Speech,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Motorcycle,Conversation,Engine,Truck,Motor_vehicle_(road),Vehicle,Speech,Human_voice",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Train,Rail_transport,Vehicle,Car,Motor_vehicle_(road)",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Vehicle_horn_and_car_horn_and_honking,Bicycle,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Vehicle_horn_and_car_horn_and_honking,Engine,Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Walk_and_footsteps,Run,Wind",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Walk_and_footsteps,Sliding_door,Slam,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Rattle,Walk_and_footsteps,Sliding_door,Thump_and_thud,Frog,Door,Domestic_sounds_and_home_sounds,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Run,Child_speech_and_kid_speaking,Human_group_actions,Shout,Breathing,Human_voice,Respiratory_sounds,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Animal,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Chatter,Accelerating_and_revving_and_vroom,Shout,Human_voice,Human_group_actions,Engine",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Chatter,Fireworks,Human_voice,Human_group_actions,Explosion",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Child_speech_and_kid_speaking,Human_group_actions,Shout,Human_voice,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Child_speech_and_kid_speaking,Human_voice,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Crowd,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Crowd,Human_group_actions,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screech,Walk_and_footsteps,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Accelerating_and_revving_and_vroom,Gunshot_and_gunfire,Car,Glass,Explosion,Motor_vehicle_(road),Vehicle,Engine",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Chink_and_clink,Crushing,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Chink_and_clink,Engine,Thump_and_thud,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Chink_and_clink,Explosion,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Giggle,Child_speech_and_kid_speaking,Human_voice,Laughter,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Bird_vocalization_and_bird_call_and_bird_song,Aircraft,Bird,Wild_animals,Animal,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Boiling,Alarm,Liquid",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Boiling,Water,Alarm,Liquid",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bus,Alarm,Engine,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bus,Vehicle_horn_and_car_horn_and_honking,Vehicle,Car,Motor_vehicle_(road),Alarm",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Buzz,Alarm,Insect,Wild_animals,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Cricket,Train,Rail_transport,Vehicle,Car,Motor_vehicle_(road),Insect,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Motorcycle,Traffic_noise_and_roadway_noise,Engine,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Motorcycle,Waves_and_surf,Bell,Laughter,Human_voice,Car,Motor_vehicle_(road),Vehicle,Ocean,Water",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Car_passing_by,Toilet_flush,Vehicle_horn_and_car_horn_and_honking,Door,Alarm,Car,Motor_vehicle_(road),Vehicle,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bark,Walk_and_footsteps,Chirp_and_tweet,Dog,Domestic_animals_and_pets,Animal,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Bark,Walk_and_footsteps,Dog,Domestic_animals_and_pets,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Bicycle_bell,Bell,Bicycle,Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bicycle_bell,Car,Motor_vehicle_(road),Vehicle,Bicycle,Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bicycle_bell,Engine,Bicycle,Vehicle,Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bicycle_bell,Motor_vehicle_(road),Siren,Bird_vocalization_and_bird_call_and_bird_song,Vehicle,Alarm,Bird,Wild_animals,Animal,Bicycle,Bell",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Guitar,Keyboard_(musical),Plucked_string_instrument,Musical_instrument,Music,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Gunshot_and_gunfire,Explosion,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Gunshot_and_gunfire,Laughter,Shout,Explosion,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Hands,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Human_group_actions,Fireworks,Shout,Human_voice,Explosion",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Motorcycle,Fireworks,Human_voice,Explosion,Motor_vehicle_(road),Vehicle",
+    "project_class": "Motorcycle",
+    "n": 1
+   },
+   {
+    "original_label": "Screaming,Yell,Laughter,Human_voice,Shout",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screech,Chatter,Sliding_door,Bus,Alarm,Engine,Truck,Motor_vehicle_(road),Vehicle,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Screech,Screaming,Child_speech_and_kid_speaking,Human_voice,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Screech,Sliding_door,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Walk_and_footsteps,Chirp_and_tweet,Chink_and_clink,Glass,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shout,Bicycle,Human_voice,Vehicle",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Siren,Car,Motor_vehicle_(road),Alarm,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Skateboard,Child_speech_and_kid_speaking,Alarm,Bird,Wild_animals,Animal,Vehicle,Speech,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Slam,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Slam,Train,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Slam,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Sliding_door,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Sliding_door,Alarm,Train,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Chirp_and_tweet,Glass,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Crushing,Boom,Glass,Explosion",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Dishes_and_pots_and_pans,Glass,Domestic_sounds_and_home_sounds",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Engine,Truck,Mechanisms,Glass,Motor_vehicle_(road),Vehicle",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Explosion,Boom,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Female_speech_and_woman_speaking,Crushing,Glass,Speech,Human_voice",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Fire,Boom,Glass,Explosion",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Bicycle_bell,Speech,Human_voice,Bicycle,Vehicle,Alarm,Bell",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bird,Train,Wild_animals,Animal,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Rattle,Chink_and_clink,Glass",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Child_speech_and_kid_speaking,Conversation,Siren,Alarm,Speech,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Child_speech_and_kid_speaking,Shout,Human_voice,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Chink_and_clink,Alarm,Train,Rail_transport,Vehicle,Glass",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Chink_and_clink,Crackle,Aircraft,Vehicle,Glass",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chink_and_clink,Gunshot_and_gunfire,Explosion,Glass",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Fixed-wing_aircraft_and_airplane,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Chirp_and_tweet,Growling,Human_group_actions,Shout,Human_voice,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Yell,Alarm,Shout,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Yell,Child_speech_and_kid_speaking,Human_group_actions,Laughter,Shout,Human_voice,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Yell,Gunshot_and_gunfire,Explosion,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Acoustic_guitar,Yell,Strum,Guitar,Plucked_string_instrument,Musical_instrument,Music,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Rattle,Whoosh_and_swoosh_and_swish,Chink_and_clink,Alarm,Boom,Glass,Explosion",
+    "project_class": "Glass_Breaking",
+    "n": 1
+   },
+   {
+    "original_label": "Shatter,Squeak,Dishes_and_pots_and_pans,Screaming,Crowd,Zipper_(clothing),Slam,Child_speech_and_kid_speaking,Chink_and_clink,Crying_and_sobbing,Glass,Door,Domestic_sounds_and_home_sounds,Human_voice,Human_group_actions,Speech",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Keys_jangling,Slam,Human_voice,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Sliding_door,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Sliding_door,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Doorbell",
+    "n": 1
+   },
+   {
+    "original_label": "Sliding_door,Hiss,Alarm,Train,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Sliding_door,Slam,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Sneeze,Car_passing_by,Traffic_noise_and_roadway_noise,Motor_vehicle_(road),Siren,Vehicle,Respiratory_sounds,Alarm,Car",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Speech,Gunshot_and_gunfire,Human_voice,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Chatter,Hiss,Train,Rail_transport,Vehicle,Human_group_actions",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Chatter,Subway_and_metro_and_underground,Sliding_door,Slam,Hiss,Alarm,Door,Domestic_sounds_and_home_sounds,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Chirp_and_tweet,Alarm,Engine,Truck,Motor_vehicle_(road),Vehicle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Hiss,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Human_group_actions,Shout,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Knock,Thump_and_thud,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Rattle,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Screech,Walk_and_footsteps,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Thunder,Alarm,Bird,Bird_vocalization_and_bird_call_and_bird_song,Car,Wild_animals,Animal,Thunderstorm,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Thunder,Alarm,Rain,Car,Water,Thunderstorm,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Thunder,Alarm,Thunderstorm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Screech,Walk_and_footsteps,Subway_and_metro_and_underground,Sliding_door,Hiss,Door,Domestic_sounds_and_home_sounds,Rail_transport,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Slam,Alarm,Car,Motor_vehicle_(road),Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Slam,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Slam,Alarm,Wood,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Slam,Gunshot_and_gunfire,Door,Domestic_sounds_and_home_sounds,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Slam,Hiss,Alarm,Train,Door,Domestic_sounds_and_home_sounds,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Sliding_door,Alarm,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Sliding_door,Slam,Train,Door,Domestic_sounds_and_home_sounds,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Subway_and_metro_and_underground,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Chatter,Sliding_door,Hiss,Train,Rail_transport,Vehicle,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Chirp_and_tweet,Thump_and_thud,Bicycle,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Crowd,Run,Slam,Human_voice,Door,Domestic_sounds_and_home_sounds,Human_group_actions",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Engine,Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Train,Dog,Rail_transport,Vehicle,Domestic_animals_and_pets,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Train,Livestock_and_farm_animals_and_working_animals,Rail_transport,Vehicle,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Train,Thump_and_thud,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Run,Slam,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Slam,Dog,Door,Domestic_sounds_and_home_sounds,Domestic_animals_and_pets,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Slam,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Sliding_door,Slam,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Squeak,Walk_and_footsteps,Wood",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Subway_and_metro_and_underground,Slam,Alarm,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Subway_and_metro_and_underground,Sliding_door,Slam,Alarm,Rail_transport,Vehicle,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Subway_and_metro_and_underground,Speech,Shout,Human_voice,Rail_transport,Vehicle",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Tap,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Tap,Clapping,Gunshot_and_gunfire,Explosion,Hands",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Tap,Keys_jangling,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Domestic_sounds_and_home_sounds",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Knock,Chatter,Laughter,Human_group_actions,Human_voice,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Knock,Cheering,Clapping,Laughter,Human_group_actions,Human_voice,Hands,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Screaming,Chatter,Crowd,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Screaming,Crowd,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Screaming,Guitar,Plucked_string_instrument,Musical_instrument,Music,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Bark,Chirp_and_tweet,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Dog,Domestic_animals_and_pets,Animal,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bark,Fixed-wing_aircraft_and_airplane,Engine,Dog,Domestic_animals_and_pets,Animal,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Bark,Motor_vehicle_(road),Siren,Vehicle,Dog,Domestic_animals_and_pets,Animal,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Bark,Screaming,Run,Dog,Domestic_animals_and_pets,Animal,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Tick,Car_passing_by,Motor_vehicle_(road),Siren,Vehicle,Alarm,Car",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Tick,Gunshot_and_gunfire,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Aircraft,Vehicle,Motor_vehicle_(road)",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Bus,Vehicle_horn_and_car_horn_and_honking,Train,Alarm,Car,Motor_vehicle_(road),Vehicle,Rail_transport",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Hiss,Bus,Alarm,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Motor_vehicle_(road),Siren,Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Truck,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Vehicle,Car,Motor_vehicle_(road),Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Water,Train,Alarm,Car,Motor_vehicle_(road),Vehicle,Rail_transport",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Alarm,Engine,Mechanisms",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Bell",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Buzz,Alarm,Truck,Bird_vocalization_and_bird_call_and_bird_song,Human_voice,Motor_vehicle_(road),Vehicle,Bird,Wild_animals,Animal,Insect",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Car_passing_by,Church_bell,Car,Motor_vehicle_(road),Vehicle,Bell",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Car_passing_by,Cricket,Train,Rail_transport,Vehicle,Car,Motor_vehicle_(road),Insect,Wild_animals,Animal",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Car_passing_by,Engine,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Typewriter,Alarm,Typing,Domestic_sounds_and_home_sounds",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Breathing,Alarm,Car,Motor_vehicle_(road),Vehicle,Respiratory_sounds",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Clapping,Shout,Thump_and_thud,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Crowd,Cheering,Clapping,Shout,Music,Human_group_actions,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Dishes_and_pots_and_pans,Crowd,Cheering,Clapping,Shout,Human_group_actions,Domestic_sounds_and_home_sounds,Human_voice,Hands",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Child_speech_and_kid_speaking,Water,Alarm,Human_group_actions,Train,Shout,Rail_transport,Vehicle,Human_voice,Speech",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Chirp_and_tweet,Cricket,Bird_vocalization_and_bird_call_and_bird_song,Insect,Human_group_actions,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Chirp_and_tweet,Human_group_actions,Shout,Livestock_and_farm_animals_and_working_animals,Human_voice,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Church_bell,Human_group_actions,Bell",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Crying_and_sobbing,Bicycle,Human_voice,Human_group_actions,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Doorbell,Human_group_actions,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Giggle,Insect,Frog,Human_group_actions,Wild_animals,Animal,Laughter,Human_voice",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Human_group_actions",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Idling,Traffic_noise_and_roadway_noise,Bus,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Human_group_actions,Engine",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Idling,Traffic_noise_and_roadway_noise,Vehicle_horn_and_car_horn_and_honking,Alarm,Car,Motor_vehicle_(road),Vehicle,Human_group_actions,Engine",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Livestock_and_farm_animals_and_working_animals,Human_group_actions,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Sliding_door,Bell,Human_group_actions,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Human_voice,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Rain,Car,Motor_vehicle_(road),Vehicle,Alarm,Water",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Train,Alarm,Car,Motor_vehicle_(road),Vehicle,Rail_transport",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Vehicle_horn_and_car_horn_and_honking,Train,Alarm,Car,Motor_vehicle_(road),Vehicle,Rail_transport",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Aircraft,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Bird,Wild_animals,Animal,Bird_vocalization_and_bird_call_and_bird_song",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Car_passing_by,Traffic_noise_and_roadway_noise,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Child_speech_and_kid_speaking,Aircraft,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Vehicle,Speech,Human_voice",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Cricket,Dog,Domestic_animals_and_pets,Animal,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Insect",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Waves_and_surf,Splash_and_splatter,Liquid,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Ocean,Water",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Wind,Crow,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chirp_and_tweet,Wind,Livestock_and_farm_animals_and_working_animals,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Cowbell,Livestock_and_farm_animals_and_working_animals,Animal,Bell",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Crack",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Crack,Wood",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Crowd,Human_group_actions",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Car_passing_by,Waves_and_surf,Laughter,Insect,Splash_and_splatter,Human_voice,Wild_animals,Animal,Liquid,Car,Motor_vehicle_(road),Vehicle,Ocean,Water",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Bell,Respiratory_sounds,Rail_transport,Human_group_actions,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Bus,Vehicle_horn_and_car_horn_and_honking,Engine,Alarm,Car,Motor_vehicle_(road),Vehicle,Human_group_actions",
+    "project_class": "Vehicle_Horn",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Car_passing_by,Wind,Bell,Human_group_actions,Car,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Dishes_and_pots_and_pans,Microwave_oven,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Drawer_open_or_close,Human_voice,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Drip,Trickle_and_dribble,Bathtub_(filling_or_washing),Splash_and_splatter,Liquid,Pour,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Drum,Percussion,Musical_instrument,Music",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Hiss",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Human_group_actions,Laughter,Breathing,Human_voice,Respiratory_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Insect,Aircraft,Wild_animals,Animal,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Insect,Frog,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Insect,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Keys_jangling,Run,Sigh,Wind,Cough,Domestic_sounds_and_home_sounds,Respiratory_sounds,Human_voice",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Keys_jangling,Slam,Domestic_sounds_and_home_sounds,Door",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Knock,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Knocking",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Laughter,Human_voice",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Subway_and_metro_and_underground,Door,Domestic_sounds_and_home_sounds,Human_group_actions,Rail_transport,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chatter,Wind_instrument_and_woodwind_instrument,Musical_instrument,Music,Human_group_actions",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Chink_and_clink,Wind,Glass",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Tap",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Tap,Scissors,Breathing,Respiratory_sounds,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Thump_and_thud",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run,Bell",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run,Chink_and_clink,Engine,Glass",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run,Slam,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run,Traffic_noise_and_roadway_noise,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run,Traffic_noise_and_roadway_noise,Truck,Thump_and_thud,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run,Wind,Bird_vocalization_and_bird_call_and_bird_song,Breathing,Bird,Wild_animals,Animal,Respiratory_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Run,Wood",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Sink_(filling_or_washing),Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Sink_(filling_or_washing),Water_tap_and_faucet,Hands,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Siren,Alarm",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Slam,Chink_and_clink,Door,Domestic_sounds_and_home_sounds,Glass",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Crushing,Wind",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Dishes_and_pots_and_pans,Cupboard_open_or_close,Thump_and_thud,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Door,Train,Vehicle,Domestic_sounds_and_home_sounds,Rail_transport",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Slam,Wood,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Sliding_door,Slam,Insect,Wild_animals,Animal,Door,Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Stream,Chirp_and_tweet,Water,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Stream,Trickle_and_dribble,Chirp_and_tweet,Water,Pour,Liquid,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Fireworks,Explosion",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Human_voice",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Zipper_(clothing),Domestic_sounds_and_home_sounds",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Water,Alarm,Train,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Water,Alarm,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Waves_and_surf,Human_group_actions,Shout,Human_voice,Ocean,Water",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Whispering,Siren,Splash_and_splatter,Alarm,Human_voice,Liquid",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Whoosh_and_swoosh_and_swish,Gunshot_and_gunfire,Boom,Explosion",
+    "project_class": "Gunshot",
+    "n": 1
+   },
+   {
+    "original_label": "Whoosh_and_swoosh_and_swish,Train,Rail_transport,Vehicle",
+    "project_class": "Train",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Slam,Idling,Engine_starting,Accelerating_and_revving_and_vroom,Bird_vocalization_and_bird_call_and_bird_song,Car,Bird,Wild_animals,Animal,Motor_vehicle_(road),Vehicle,Door,Domestic_sounds_and_home_sounds,Engine",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Mechanisms,Bicycle,Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Clapping,Engine,Laughter,Aircraft,Human_group_actions,Human_voice,Hands,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Applause,Cheering,Shout,Human_group_actions,Human_voice",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Engine,Aircraft,Vehicle",
+    "project_class": "Aircraft",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Engine,Mechanisms,Tools",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Engine,Train,Music,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Engine,Train,Rail_transport,Vehicle",
+    "project_class": "Alarm",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Thunder,Wind,Thunderstorm",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Tick,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Tick,Chirp_and_tweet,Traffic_noise_and_roadway_noise,Livestock_and_farm_animals_and_working_animals,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Traffic_noise_and_roadway_noise,Motor_vehicle_(road),Vehicle",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Waves_and_surf,Human_group_actions,Laughter,Boat_and_Water_vehicle,Human_voice,Vehicle,Ocean,Water",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Waves_and_surf,Wind,Ocean,Water",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Whispering,Chirp_and_tweet,Human_voice,Bird_vocalization_and_bird_call_and_bird_song,Bird,Wild_animals,Animal",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Yell,Cough,Shout,Human_voice,Respiratory_sounds",
+    "project_class": "Help_Shouting",
+    "n": 1
+   },
+   {
+    "original_label": "Walk_and_footsteps,Yell,Run,Shout,Human_voice",
+    "project_class": "Footsteps",
+    "n": 1
+   },
+   {
+    "original_label": "Alarm,Engine",
+    "project_class": "Alarm",
+    "n": 1
+   }
+  ],
+  "UrbanSound8K": [
+   {
+    "original_label": "dog_bark",
+    "project_class": "Dog_Bark",
+    "n": 1000
+   },
+   {
+    "original_label": "drilling",
+    "project_class": "Drilling",
+    "n": 1000
+   },
+   {
+    "original_label": "engine_idling",
+    "project_class": "Car_Engine",
+    "n": 1000
+   },
+   {
+    "original_label": "jackhammer",
+    "project_class": "Jackhammer",
+    "n": 1000
+   },
+   {
+    "original_label": "siren",
+    "project_class": "Siren",
+    "n": 929
+   },
+   {
+    "original_label": "car_horn",
+    "project_class": "Vehicle_Horn",
+    "n": 429
+   },
+   {
+    "original_label": "gun_shot",
+    "project_class": "Gunshot",
+    "n": 374
+   }
+  ],
+  "owlgebra_babycry": [
+   {
+    "original_label": "hungry",
+    "project_class": "Baby_Crying",
+    "n": 221
+   },
+   {
+    "original_label": "dysregulated",
+    "project_class": "Baby_Crying",
+    "n": 102
+   },
+   {
+    "original_label": "frustrated",
+    "project_class": "Baby_Crying",
+    "n": 84
+   },
+   {
+    "original_label": "dysregulation-sick",
+    "project_class": "Baby_Crying",
+    "n": 39
+   },
+   {
+    "original_label": "tired",
+    "project_class": "Baby_Crying",
+    "n": 18
+   },
+   {
+    "original_label": "discomfort",
+    "project_class": "Baby_Crying",
+    "n": 13
+   },
+   {
+    "original_label": "dysregulation-bathroom",
+    "project_class": "Baby_Crying",
+    "n": 12
+   },
+   {
+    "original_label": "belly_pain",
+    "project_class": "Baby_Crying",
+    "n": 11
+   }
+  ]
+ },
+ "fsd50k_ambiguity": {
+  "Help_Shouting": {
+   "n": 498,
+   "ambiguous_n": 77,
+   "examples": [
+    "Applause,Chatter,Crowd,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "Applause,Crowd,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands",
+    "Applause,Screaming,Crowd,Cheering,Clapping,Shout,Human_group_actions,Human_voice,Hands"
+   ]
+  },
+  "Alarm": {
+   "n": 733,
+   "ambiguous_n": 241,
+   "examples": [
+    "Bicycle_bell,Alarm,Bicycle,Vehicle,Bell",
+    "Bicycle_bell,Alarm,Bicycle,Vehicle,Bell",
+    "Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm"
+   ]
+  },
+  "Knocking": {
+   "n": 347,
+   "ambiguous_n": 2,
+   "examples": [
+    "Knock,Wood,Percussion,Musical_instrument,Music,Door,Domestic_sounds_and_home_sounds",
+    "Knock,Chatter,Boat_and_Water_vehicle,Music,Human_group_actions,Vehicle,Door,Domestic_sounds_and_home_sounds"
+   ]
+  },
+  "Footsteps": {
+   "n": 545,
+   "ambiguous_n": 2,
+   "examples": [
+    "Walk_and_footsteps,Chatter,Wind_instrument_and_woodwind_instrument,Musical_instrument,Music,Human_group_actions",
+    "Walk_and_footsteps,Drum,Percussion,Musical_instrument,Music"
+   ]
+  },
+  "Train": {
+   "n": 428,
+   "ambiguous_n": 7,
+   "examples": [
+    "Hiss,Alarm,Train,Rail_transport,Vehicle",
+    "Hiss,Alarm,Train,Rail_transport,Vehicle",
+    "Water,Alarm,Train,Rail_transport,Vehicle"
+   ]
+  },
+  "Aircraft": {
+   "n": 258,
+   "ambiguous_n": 0,
+   "examples": []
+  },
+  "Motorcycle": {
+   "n": 238,
+   "ambiguous_n": 114,
+   "examples": [
+    "Motorcycle,Motor_vehicle_(road),Vehicle,Engine",
+    "Male_speech_and_man_speaking,Idling,Motorcycle,Accelerating_and_revving_and_vroom,Speech,Human_voice,Engine,Motor_vehicle_(road),Vehicle",
+    "Motorcycle,Engine,Motor_vehicle_(road),Vehicle"
+   ]
+  },
+  "Vehicle_Horn": {
+   "n": 33,
+   "ambiguous_n": 33,
+   "examples": [
+    "Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm",
+    "Vehicle_horn_and_car_horn_and_honking,Car,Motor_vehicle_(road),Vehicle,Alarm"
+   ]
+  },
+  "Gunshot": {
+   "n": 419,
+   "ambiguous_n": 419,
+   "examples": [
+    "Glass,Gunshot_and_gunfire,Explosion",
+    "Gunshot_and_gunfire,Explosion",
+    "Gunshot_and_gunfire,Explosion"
+   ]
+  },
+  "Glass_Breaking": {
+   "n": 475,
+   "ambiguous_n": 0,
+   "examples": []
+  },
+  "Doorbell": {
+   "n": 53,
+   "ambiguous_n": 53,
+   "examples": [
+    "Bell,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "Bell,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm",
+    "Bell,Doorbell,Door,Domestic_sounds_and_home_sounds,Alarm"
+   ]
+  }
+ },
+ "split_feasibility": [
+  {
+   "project_class": "Jackhammer",
+   "n_clips": 1000,
+   "n_source_groups": 45,
+   "multi_clip_groups": 44,
+   "max_group_size": 79,
+   "max_group_share": 0.079,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Doorbell",
+   "n_clips": 53,
+   "n_source_groups": 53,
+   "multi_clip_groups": 0,
+   "max_group_size": 1,
+   "max_group_share": 0.019,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Siren",
+   "n_clips": 929,
+   "n_source_groups": 74,
+   "multi_clip_groups": 63,
+   "max_group_size": 100,
+   "max_group_share": 0.108,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Car_Engine",
+   "n_clips": 1000,
+   "n_source_groups": 97,
+   "multi_clip_groups": 86,
+   "max_group_size": 34,
+   "max_group_share": 0.034,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Drilling",
+   "n_clips": 1000,
+   "n_source_groups": 119,
+   "multi_clip_groups": 104,
+   "max_group_size": 27,
+   "max_group_share": 0.027,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Vehicle_Horn",
+   "n_clips": 466,
+   "n_source_groups": 162,
+   "multi_clip_groups": 50,
+   "max_group_size": 73,
+   "max_group_share": 0.157,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Motorcycle",
+   "n_clips": 238,
+   "n_source_groups": 238,
+   "multi_clip_groups": 0,
+   "max_group_size": 1,
+   "max_group_share": 0.004,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Aircraft",
+   "n_clips": 338,
+   "n_source_groups": 305,
+   "multi_clip_groups": 16,
+   "max_group_size": 6,
+   "max_group_share": 0.018,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Dog_Bark",
+   "n_clips": 1000,
+   "n_source_groups": 337,
+   "multi_clip_groups": 258,
+   "max_group_size": 4,
+   "max_group_share": 0.004,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Knocking",
+   "n_clips": 387,
+   "n_source_groups": 383,
+   "multi_clip_groups": 4,
+   "max_group_size": 2,
+   "max_group_share": 0.005,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Train",
+   "n_clips": 468,
+   "n_source_groups": 456,
+   "multi_clip_groups": 11,
+   "max_group_size": 3,
+   "max_group_share": 0.006,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Help_Shouting",
+   "n_clips": 498,
+   "n_source_groups": 498,
+   "multi_clip_groups": 0,
+   "max_group_size": 1,
+   "max_group_share": 0.002,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Glass_Breaking",
+   "n_clips": 515,
+   "n_source_groups": 512,
+   "multi_clip_groups": 2,
+   "max_group_size": 3,
+   "max_group_share": 0.006,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Baby_Crying",
+   "n_clips": 540,
+   "n_source_groups": 518,
+   "multi_clip_groups": 11,
+   "max_group_size": 7,
+   "max_group_share": 0.013,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Gunshot",
+   "n_clips": 793,
+   "n_source_groups": 536,
+   "multi_clip_groups": 54,
+   "max_group_size": 25,
+   "max_group_share": 0.032,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Footsteps",
+   "n_clips": 585,
+   "n_source_groups": 577,
+   "multi_clip_groups": 4,
+   "max_group_size": 6,
+   "max_group_share": 0.01,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  },
+  {
+   "project_class": "Alarm",
+   "n_clips": 755,
+   "n_source_groups": 751,
+   "multi_clip_groups": 4,
+   "max_group_size": 2,
+   "max_group_share": 0.003,
+   "groups_needed_min": 3,
+   "verdict": "FEASIBLE"
+  }
+ ],
+ "suspicious_rows": [
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\83299.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 33.071,
+   "rms_db": -54.4669,
+   "peak": 0.1378,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "very_long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\427598.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.9086,
+   "rms_db": -17.8707,
+   "peak": 0.9999,
+   "clip_frac": 0.011,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\118515.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 0.9132,
+   "rms_db": -12.8746,
+   "peak": 1.0,
+   "clip_frac": 0.0129,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\389761.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 15.0187,
+   "rms_db": -63.5226,
+   "peak": 0.0036,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,silent"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Help_Shouting\\220822.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Help_Shouting",
+   "duration": 0.7511,
+   "rms_db": -3.0545,
+   "peak": 0.9999,
+   "clip_frac": 0.3047,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\145580.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 17.049,
+   "rms_db": -13.03,
+   "peak": 1.0,
+   "clip_frac": 0.001,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\221644.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 20.1201,
+   "rms_db": -10.5818,
+   "peak": 1.0,
+   "clip_frac": 0.0442,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\400093.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 20.4925,
+   "rms_db": -9.8388,
+   "peak": 1.0,
+   "clip_frac": 0.0018,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Help_Shouting\\220823.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Help_Shouting",
+   "duration": 0.7035,
+   "rms_db": -1.369,
+   "peak": 0.9999,
+   "clip_frac": 0.5546,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Help_Shouting\\321785.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Help_Shouting",
+   "duration": 23.9467,
+   "rms_db": -45.7002,
+   "peak": 0.4091,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\136766.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.8516,
+   "rms_db": -8.6104,
+   "peak": 1.0,
+   "clip_frac": 0.0825,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Help_Shouting\\233068.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Help_Shouting",
+   "duration": 24.4815,
+   "rms_db": -9.196,
+   "peak": 1.0,
+   "clip_frac": 0.0678,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\166076.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 20.1614,
+   "rms_db": -6.0128,
+   "peak": 1.0,
+   "clip_frac": 0.1064,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\273320.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 29.7796,
+   "rms_db": -14.1106,
+   "peak": 1.0,
+   "clip_frac": 0.0055,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\371092.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 0.9333,
+   "rms_db": -17.8071,
+   "peak": 1.0,
+   "clip_frac": 0.0029,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\88942.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 0.6733,
+   "rms_db": -47.7252,
+   "peak": 0.3234,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\347648.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 27.5034,
+   "rms_db": -18.4366,
+   "peak": 1.0,
+   "clip_frac": 0.0025,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Aircraft\\73297.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Aircraft",
+   "duration": 24.3461,
+   "rms_db": -48.3767,
+   "peak": 0.0348,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\396316.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.8291,
+   "rms_db": -13.1717,
+   "peak": 1.0,
+   "clip_frac": 0.017,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\30303.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 30.0147,
+   "rms_db": -10.7228,
+   "peak": 1.0,
+   "clip_frac": 0.0068,
+   "n_flags": 2,
+   "flags": "very_long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Motorcycle\\343686.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Motorcycle",
+   "duration": 27.5267,
+   "rms_db": -11.9375,
+   "peak": 1.0,
+   "clip_frac": 0.0052,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\324585.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.5,
+   "rms_db": -7.0278,
+   "peak": 1.0,
+   "clip_frac": 0.0405,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Aircraft\\392324.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Aircraft",
+   "duration": 16.0914,
+   "rms_db": -52.3526,
+   "peak": 0.0274,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\88949.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 0.8531,
+   "rms_db": -45.3217,
+   "peak": 0.5051,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\137734.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 15.1322,
+   "rms_db": -49.9017,
+   "peak": 0.202,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\389518.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 16.3347,
+   "rms_db": -47.4556,
+   "peak": 0.3854,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Aircraft\\207456.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Aircraft",
+   "duration": 16.5384,
+   "rms_db": -4.9833,
+   "peak": 1.0,
+   "clip_frac": 0.1087,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\154840.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 15.496,
+   "rms_db": -52.9257,
+   "peak": 0.0405,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\51470.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.8403,
+   "rms_db": -12.1822,
+   "peak": 1.0,
+   "clip_frac": 0.0038,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\47529.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 21.0108,
+   "rms_db": -15.0967,
+   "peak": 1.0,
+   "clip_frac": 0.0021,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\112686.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 21.3539,
+   "rms_db": -17.7062,
+   "peak": 1.0,
+   "clip_frac": 0.0017,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\381569.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.5376,
+   "rms_db": -12.6999,
+   "peak": 1.0,
+   "clip_frac": 0.0222,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\27787.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 23.4057,
+   "rms_db": -7.6762,
+   "peak": 1.0,
+   "clip_frac": 0.0011,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\160590.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.5005,
+   "rms_db": -6.0633,
+   "peak": 1.0,
+   "clip_frac": 0.006,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\380670.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 19.4537,
+   "rms_db": -46.4249,
+   "peak": 0.0466,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data/raw/babycry/Baby_Crying/recanvo__200126_2142_00-09-33.55--00-09-34.5.wav",
+   "source_dataset": "owlgebra_babycry",
+   "project_class": "Baby_Crying",
+   "duration": 0.949,
+   "rms_db": -13.3559,
+   "peak": 1.0,
+   "clip_frac": 0.0012,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data/raw/babycry/Baby_Crying/recanvo__200126_2142_00-23-41.24--00-23-42.11.wav",
+   "source_dataset": "owlgebra_babycry",
+   "project_class": "Baby_Crying",
+   "duration": 0.865,
+   "rms_db": -13.9219,
+   "peak": 1.0,
+   "clip_frac": 0.0011,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\132074.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 16.76,
+   "rms_db": -46.9036,
+   "peak": 0.0277,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\380676.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 19.4537,
+   "rms_db": -45.1701,
+   "peak": 0.0489,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data/raw/babycry/Baby_Crying/recanvo__200302_2204_00-00-03.068--00-00-03.91.wav",
+   "source_dataset": "owlgebra_babycry",
+   "project_class": "Baby_Crying",
+   "duration": 0.842,
+   "rms_db": -13.6183,
+   "peak": 1.0,
+   "clip_frac": 0.0013,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\220220.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 26.9359,
+   "rms_db": -20.5277,
+   "peak": 1.0,
+   "clip_frac": 0.0011,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\89904.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 0.8586,
+   "rms_db": -46.71,
+   "peak": 0.3377,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\379756.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 20.6573,
+   "rms_db": -47.8797,
+   "peak": 0.3347,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\89905.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 0.611,
+   "rms_db": -46.1608,
+   "peak": 0.4771,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\371041.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.9221,
+   "rms_db": -16.0717,
+   "peak": 1.0,
+   "clip_frac": 0.0016,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Motorcycle\\153578.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Motorcycle",
+   "duration": 21.6816,
+   "rms_db": -46.145,
+   "peak": 0.0584,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Vehicle_Horn\\423990.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Vehicle_Horn",
+   "duration": 0.7,
+   "rms_db": -12.9277,
+   "peak": 1.0,
+   "clip_frac": 0.0034,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Motorcycle\\39855.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Motorcycle",
+   "duration": 23.104,
+   "rms_db": -7.4582,
+   "peak": 1.0,
+   "clip_frac": 0.0271,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Vehicle_Horn\\180339.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Vehicle_Horn",
+   "duration": 20.5975,
+   "rms_db": -48.6315,
+   "peak": 0.047,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\181363.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 27.8468,
+   "rms_db": -45.0396,
+   "peak": 0.1656,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\360692.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 0.8833,
+   "rms_db": -49.6684,
+   "peak": 0.0153,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\352305.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 19.1258,
+   "rms_db": -60.8073,
+   "peak": 0.0051,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,silent"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\90966.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.4917,
+   "rms_db": -10.8013,
+   "peak": 1.0,
+   "clip_frac": 0.0077,
+   "n_flags": 2,
+   "flags": "extreme_short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\369781.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.6629,
+   "rms_db": -13.6803,
+   "peak": 1.0,
+   "clip_frac": 0.014,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Aircraft\\208847.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Aircraft",
+   "duration": 15.1104,
+   "rms_db": -12.0037,
+   "peak": 1.0,
+   "clip_frac": 0.0018,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Glass_Breaking\\127543.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Glass_Breaking",
+   "duration": 0.8797,
+   "rms_db": -18.4586,
+   "peak": 1.0,
+   "clip_frac": 0.0026,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\114479.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 26.3006,
+   "rms_db": -14.2446,
+   "peak": 1.0,
+   "clip_frac": 0.0126,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\78948.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 17.6193,
+   "rms_db": -58.3718,
+   "peak": 0.0628,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\148297.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 18.4345,
+   "rms_db": -8.5988,
+   "peak": 1.0,
+   "clip_frac": 0.0075,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\378563.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.9443,
+   "rms_db": -11.2125,
+   "peak": 1.0,
+   "clip_frac": 0.0378,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\182435.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 23.3144,
+   "rms_db": -19.7144,
+   "peak": 1.0,
+   "clip_frac": 0.0014,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Alarm\\395213.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Alarm",
+   "duration": 0.6817,
+   "rms_db": -53.7082,
+   "peak": 0.0065,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\83296.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 22.5428,
+   "rms_db": -14.622,
+   "peak": 1.0,
+   "clip_frac": 0.0028,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Train\\83298.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Train",
+   "duration": 34.0637,
+   "rms_db": -53.0992,
+   "peak": 0.1163,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "very_long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\386845.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.6463,
+   "rms_db": -7.9843,
+   "peak": 1.0,
+   "clip_frac": 0.1195,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\399266.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.6671,
+   "rms_db": -11.6086,
+   "peak": 1.0,
+   "clip_frac": 0.0129,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\212602.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.3019,
+   "rms_db": -2.9367,
+   "peak": 1.0,
+   "clip_frac": 0.3407,
+   "n_flags": 2,
+   "flags": "extreme_short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\204949.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 24.1967,
+   "rms_db": -17.0944,
+   "peak": 1.0,
+   "clip_frac": 0.003,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\275151.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.3825,
+   "rms_db": -8.7787,
+   "peak": 1.0,
+   "clip_frac": 0.034,
+   "n_flags": 2,
+   "flags": "extreme_short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\240377.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 20.8076,
+   "rms_db": -8.2049,
+   "peak": 1.0,
+   "clip_frac": 0.0692,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Gunshot\\371004.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Gunshot",
+   "duration": 0.8,
+   "rms_db": -9.4966,
+   "peak": 1.0,
+   "clip_frac": 0.0225,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Knocking\\233795.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Knocking",
+   "duration": 15.7663,
+   "rms_db": -54.2158,
+   "peak": 0.032,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Knocking\\120331.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Knocking",
+   "duration": 18.432,
+   "rms_db": -17.5728,
+   "peak": 1.0,
+   "clip_frac": 0.0029,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Knocking\\204491.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Knocking",
+   "duration": 20.8457,
+   "rms_db": -16.5052,
+   "peak": 1.0,
+   "clip_frac": 0.0017,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Knocking\\242184.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Knocking",
+   "duration": 26.5665,
+   "rms_db": -54.6059,
+   "peak": 0.0675,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Knocking\\338299.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Knocking",
+   "duration": 16.7072,
+   "rms_db": -14.2429,
+   "peak": 1.0,
+   "clip_frac": 0.0195,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Knocking\\429964.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Knocking",
+   "duration": 16.0,
+   "rms_db": -49.4961,
+   "peak": 0.1215,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\155920.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 29.5629,
+   "rms_db": -55.4607,
+   "peak": 0.1953,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\154663.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 18.3,
+   "rms_db": -46.8748,
+   "peak": 0.1706,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\138336.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 0.9762,
+   "rms_db": -49.0654,
+   "peak": 0.0475,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\15562.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 24.2403,
+   "rms_db": -45.6166,
+   "peak": 0.7078,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\340209.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 0.4193,
+   "rms_db": -54.1316,
+   "peak": 0.0137,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "extreme_short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\340214.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 0.311,
+   "rms_db": -47.5882,
+   "peak": 0.0373,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "extreme_short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\36362.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 26.8587,
+   "rms_db": -45.588,
+   "peak": 0.2892,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\35534.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 17.4469,
+   "rms_db": -51.2923,
+   "peak": 0.1024,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\422743.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 0.9098,
+   "rms_db": -45.9224,
+   "peak": 0.1073,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\339932.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 30.0,
+   "rms_db": -54.1425,
+   "peak": 0.0182,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\340061.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 24.0,
+   "rms_db": -46.5192,
+   "peak": 0.1115,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\199878.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 16.2074,
+   "rms_db": -59.2537,
+   "peak": 0.0117,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\407655.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 23.0,
+   "rms_db": -45.7659,
+   "peak": 0.6978,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\266528.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 18.0655,
+   "rms_db": -46.2172,
+   "peak": 0.1232,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\34254.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 19.9867,
+   "rms_db": -45.3788,
+   "peak": 0.2512,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\407604.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 29.4197,
+   "rms_db": -54.5461,
+   "peak": 0.0294,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\337142.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 29.3408,
+   "rms_db": -12.723,
+   "peak": 1.0,
+   "clip_frac": 0.0046,
+   "n_flags": 2,
+   "flags": "long,clipped"
+  },
+  {
+   "local_path": "data\\raw\\fsd50k\\Footsteps\\260718.wav",
+   "source_dataset": "FSD50K",
+   "project_class": "Footsteps",
+   "duration": 24.3722,
+   "rms_db": -51.9728,
+   "peak": 0.0875,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "long,low_energy"
+  },
+  {
+   "local_path": "C:\\Users\\BITPATNA\\.cache\\kagglehub\\datasets\\chrisfilo\\urbansound8k\\versions\\1\\fold3\\118961-3-0-0.wav",
+   "source_dataset": "UrbanSound8K",
+   "project_class": "Dog_Bark",
+   "duration": 0.77,
+   "rms_db": -8.0838,
+   "peak": 1.0,
+   "clip_frac": 0.0317,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "C:\\Users\\BITPATNA\\.cache\\kagglehub\\datasets\\chrisfilo\\urbansound8k\\versions\\1\\fold2\\132073-1-2-0.wav",
+   "source_dataset": "UrbanSound8K",
+   "project_class": "Vehicle_Horn",
+   "duration": 0.3659,
+   "rms_db": -51.3355,
+   "peak": 0.0103,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "extreme_short,low_energy"
+  },
+  {
+   "local_path": "C:\\Users\\BITPATNA\\.cache\\kagglehub\\datasets\\chrisfilo\\urbansound8k\\versions\\1\\fold2\\132073-1-4-0.wav",
+   "source_dataset": "UrbanSound8K",
+   "project_class": "Vehicle_Horn",
+   "duration": 0.78,
+   "rms_db": -52.5879,
+   "peak": 0.0101,
+   "clip_frac": 0.0,
+   "n_flags": 2,
+   "flags": "short,low_energy"
+  },
+  {
+   "local_path": "C:\\Users\\BITPATNA\\.cache\\kagglehub\\datasets\\chrisfilo\\urbansound8k\\versions\\1\\fold3\\135526-6-13-0.wav",
+   "source_dataset": "UrbanSound8K",
+   "project_class": "Gunshot",
+   "duration": 0.5563,
+   "rms_db": -10.7775,
+   "peak": 1.0,
+   "clip_frac": 0.0082,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  },
+  {
+   "local_path": "C:\\Users\\BITPATNA\\.cache\\kagglehub\\datasets\\chrisfilo\\urbansound8k\\versions\\1\\fold7\\135527-6-10-0.wav",
+   "source_dataset": "UrbanSound8K",
+   "project_class": "Gunshot",
+   "duration": 0.85,
+   "rms_db": -12.4211,
+   "peak": 1.0,
+   "clip_frac": 0.0033,
+   "n_flags": 2,
+   "flags": "short,clipped"
+  }
+ ],
+ "n_suspicious_total": 2580
+}

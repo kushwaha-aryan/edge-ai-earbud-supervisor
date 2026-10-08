@@ -2,18 +2,35 @@
 """Run the Phase 2A preprocessing pipeline.
 
 Stages (FINAL_PROJECT_BLUEPRINT.md Change Log 2026-10-08, decisions D1-D12
-plus OA1-OA4):
+plus OA1-OA4; D9 amended after the Phase 2B gate FAIL):
 
-  ledger    clip exclusions/truncation decisions + provenance ledger
-            -> data/provenance/phase2a_clip_ledger.csv
-  split     seeded greedy 70/15/15 source-group split (D9)
-            -> data/splits/clip_splits.csv, data/splits/group_splits.csv
-  features  cleaned audio -> windowed mel-spectrograms -> [0,1] using
-            train-frozen dB bounds
-            -> data/processed/features_<split>.npy, labels_<split>.npy,
-               window_index_<split>.csv, feature_stats.json
-  gates     D11 leakage gates G1-G5 (exit code 1 on failure)
-            -> scripts/results/phase2a_gates.json
+  ledger     clip exclusions/truncation decisions + provenance ledger
+             -> data/provenance/phase2a_clip_ledger.csv
+  split      seeded 70/15/15 source-group split (D9): count greedy, plus the
+             covariate hill-climb when data/provenance/clip_covariates.csv
+             exists (D9 amendment: balances per-class duration / RMS / clip
+             feature-mean across splits)
+             -> data/splits/clip_splits.csv, data/splits/group_splits.csv
+  covariates per-clip mean feature value from the existing feature arrays
+             (input to the balanced split)
+             -> data/provenance/clip_covariates.csv
+  features   cleaned audio -> windowed mel-spectrograms -> [0,1] using
+             train-frozen dB bounds
+             -> data/processed/features_<split>.npy, labels_<split>.npy,
+                window_index_<split>.csv, feature_stats.json
+  gates      D11 leakage gates G1-G5 (exit code 1 on failure)
+             -> scripts/results/phase2a_gates.json
+
+The balanced split needs covariates, which need features, which need a
+split; on a cold start run the pipeline twice:
+
+  python scripts/run_phase2a_preprocessing.py                    # v1 split
+  python scripts/run_phase2a_preprocessing.py --stage covariates  # derive
+  python scripts/run_phase2a_preprocessing.py                    # v2 + gates
+
+Re-running with an unchanged covariates file is idempotent (same seed, same
+inputs -> same split). If you refresh covariates, re-run split + features +
+gates together afterwards.
 
 Usage:
   python scripts/run_phase2a_preprocessing.py
@@ -38,7 +55,7 @@ import pandas as pd
 from src import config
 from src.preprocessing import clips, features, gates, splits
 
-STAGE_CHOICES = ("all", "ledger", "split", "features", "gates")
+STAGE_CHOICES = ("all", "ledger", "split", "covariates", "features", "gates")
 
 
 def _print_split_summary(clip_splits: pd.DataFrame) -> None:
@@ -61,7 +78,7 @@ def main() -> int:
     args = parser.parse_args()
     t0 = time.time()
 
-    print("[1/4] ledger: exclusions, truncation, provenance", flush=True)
+    print("[1/5] ledger: exclusions, truncation, provenance", flush=True)
     ledger = clips.build_ledger()
     n_kept = int((ledger["status"] == "kept").sum())
     n_excluded = len(ledger) - n_kept
@@ -70,20 +87,26 @@ def main() -> int:
     for r, c in reasons.items():
         print(f"        {r}: {c}", flush=True)
 
-    print("[2/4] split: seeded greedy source-group 70/15/15", flush=True)
+    print("[2/5] split: seeded source-group 70/15/15 (D9)", flush=True)
     clip_splits, group_splits = splits.build_splits(ledger)
     _print_split_summary(clip_splits)
     print(f"      groups={len(group_splits)} (seed={config.SPLIT_SEED})", flush=True)
 
     if args.stage in ("all", "features"):
-        print("[3/4] features: clean -> window -> mel-spectrogram -> [0,1]", flush=True)
+        print("[3/5] features: clean -> window -> mel-spectrogram -> [0,1]", flush=True)
         features.extract_features(ledger, clip_splits, limit=args.limit)
     else:
-        print("[3/4] features: skipped (stage=%s)" % args.stage, flush=True)
+        print("[3/5] features: skipped (stage=%s)" % args.stage, flush=True)
+
+    if args.stage == "covariates":
+        print("[4/5] covariates: per-clip mean feature value", flush=True)
+        features.compute_clip_covariates()
+    else:
+        print("[4/5] covariates: skipped (stage=%s)" % args.stage, flush=True)
 
     exit_code = 0
     if args.stage in ("all", "gates"):
-        print("[4/4] gates: D11 leakage checks", flush=True)
+        print("[5/5] gates: D11 leakage checks", flush=True)
         problems, details = gates.run_gates(ledger, clip_splits, group_splits)
         out = ROOT / "scripts" / "results" / "phase2a_gates.json"
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -104,7 +127,7 @@ def main() -> int:
             )
             print(f"      details -> {out}", flush=True)
     else:
-        print("[4/4] gates: skipped (stage=%s)" % args.stage, flush=True)
+        print("[5/5] gates: skipped (stage=%s)" % args.stage, flush=True)
 
     print(f"done in {time.time() - t0:.1f}s", flush=True)
     return exit_code

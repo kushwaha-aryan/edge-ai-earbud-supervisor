@@ -1,0 +1,16 @@
+metric,split,value,level
+silence_drop_rate,train,0.0683,ok
+silence_drop_rate,val,0.0711,ok
+silence_drop_rate,test,0.0723,ok
+silence_drop_spread,all,0.004,ok
+floor_value_fraction,train,0.0095,ok
+ceiling_value_fraction,train,0.0,ok
+floor_value_fraction,val,0.0069,ok
+ceiling_value_fraction,val,0.0,ok
+floor_value_fraction,test,0.0077,ok
+ceiling_value_fraction,test,0.0,ok
+pad_fraction_max,all,0.0,ok
+truncation_rate,train,0.0845,ok
+truncation_rate,val,0.0871,ok
+truncation_rate,test,0.0865,ok
+truncation_spread,all,0.0027,ok

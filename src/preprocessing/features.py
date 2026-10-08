@@ -262,3 +262,46 @@ def _split_summary(df: pd.DataFrame, n_clips: int, windows: int, dropped: int) -
         "raw_windows": int(windows + dropped),
         "dropped_silent": int(dropped),
     }
+
+
+def compute_clip_covariates() -> dict:
+    """Derive per-clip feature covariates for the D9 covariate-balanced split.
+
+    Reads window_index_<split>.csv and features_<split>.npy for every split,
+    computes each clip's mean scaled feature value over its surviving windows
+    (identical to the Phase 2B clip_feature_mean), and writes
+    data/provenance/clip_covariates.csv (clip_id, n_windows, feat_mean).
+
+    Because scaling is an affine map of the frozen dB bounds, these means are
+    affine-equivalent to raw mel-dB clip means: balancing them keeps its
+    meaning even if the bounds change in a later extraction pass.
+    """
+    out_dir = config.PROCESSED_DATA_DIR
+    parts: list[pd.DataFrame] = []
+    for split in SPLIT_ORDER:
+        wi = pd.read_csv(out_dir / f"window_index_{split}.csv")
+        x = np.load(out_dir / f"features_{split}.npy", mmap_mode="r")
+        if len(wi) != len(x):
+            raise RuntimeError(
+                f"covariates {split}: window_index rows {len(wi)} != features {len(x)}"
+            )
+        wmean = np.asarray(x.mean(axis=(1, 2, 3)), dtype=np.float64)
+        df = pd.DataFrame({"clip_id": wi["clip_id"].to_numpy(), "wmean": wmean})
+        parts.append(
+            df.groupby("clip_id")["wmean"]
+            .agg(feat_mean="mean", n_windows="count")
+            .reset_index()
+        )
+    cov = pd.concat(parts, ignore_index=True)
+    if cov["clip_id"].duplicated().any():
+        raise RuntimeError("clip covariates contain duplicate clip_ids")
+    cov = cov.sort_values("clip_id").reset_index(drop=True)
+    path = config.PROVENANCE_DIR / "clip_covariates.csv"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    cov.to_csv(path, index=False)
+    print(
+        f"[covariates] {len(cov)} clips, {int(cov['n_windows'].sum())} windows "
+        f"-> {path}",
+        flush=True,
+    )
+    return {"clips": int(len(cov)), "windows": int(cov["n_windows"].sum())}

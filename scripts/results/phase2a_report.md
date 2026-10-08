@@ -1,11 +1,11 @@
 # Phase 2A Preprocessing — Execution Report
 
-**Date:** 2026-10-08
-**Policy:** FINAL_PROJECT_BLUEPRINT.md Change Log 2026-10-08 (decisions D1–D12 + amendments OA1–OA4)
-**Driver:** `scripts/run_phase2a_preprocessing.py` (stages: ledger → split → features → gates)
-**Verdict: PASS — all D11 leakage gates (G1–G5) passed; artifacts ready for Phase 2B/Phase 3.**
+**Date:** 2026-10-08 (re-executed after the D9 v2 split amendment — see §2)
+**Policy:** FINAL_PROJECT_BLUEPRINT.md Change Log 2026-10-08 (decisions D1–D12 + amendments OA1–OA4, D9 amended after the Phase 2B gate FAIL)
+**Driver:** `scripts/run_phase2a_preprocessing.py` (stages [1/5] ledger → [2/5] split → [3/5] features → [4/5] covariates → [5/5] gates)
+**Verdict: PASS — all D11 leakage gates (G1–G5) passed; Phase 2B §6 gate verdict PASS WITH WARNINGS (`scripts/results/phase2b_split_gate/phase2b_report.md`); artifacts ready for Phase 3 training.**
 
-Runtime: 515 s total (506 s feature extraction) on the project venv (Python 3.13.14, librosa 1.0.0, soxr 1.1.0, numpy 2.5.3, pandas 3.0.6).
+Runtime: 239 s total (192 s feature extraction) on the project venv (Python 3.13.14, librosa 1.0.0, soxr 1.1.0, numpy 2.5.3, pandas 3.0.6).
 
 ---
 
@@ -32,18 +32,32 @@ per manifest clip with source dataset/release, original label, sample id + group
 applied parameter (truncate 15.0 s, resample 16 kHz, mono, window 3,200/step 1,600,
 pad fraction 0.0). Covers blueprint §5.4.
 
-## 2. Stage 2 — seeded source-group split (D9)
+## 2. Stage 2 — seeded source-group split (D9, amended to D9 v2)
 
-Greedy per-class deficit assignment, `np.random.default_rng(42)`, groups atomic.
+Three deterministic phases, `np.random.default_rng(42)`, groups atomic
+(`src/preprocessing/splits.py`):
 
-| Split | Clips | Share |
-|---|---|---|
-| train | 7,110 | 69.16% |
-| val | 1,577 | 15.34% |
-| test | 1,594 | 15.50% |
+1. **count greedy (original D9)** — seeded group order, smallest summed relative
+   per-class deficit against the 70/15/15 targets.
+2. **covariate hill-climb** — single-group moves over a per-class objective:
+   count deviation, means/spreads (class-sd units) of `processed_duration_s` /
+   `rms_db` / `clip_feature_mean`, plus a 10-bin binned-quantile histogram match.
+3. **exact-KS repair** — single-group moves with lexicographic accept over
+   (cells crossing the gate C2 flag thresholds, then energy); cells with < 15
+   clips per side are never optimized (underpowered rule).
 
-- **5,341 source groups** exist in the ledger; **5,201** contain at least one kept clip
-  (140 groups lost entirely to exclusions); split rows: train 3,611 / val 817 / test 773.
+Phases 2–3 are skipped with a notice when `data/provenance/clip_covariates.csv`
+is absent (stage [4/5]; cold start = `--stage all` → `--stage covariates` →
+`--stage all`). Per-class count band: max(3% of class size, initial deviation).
+
+| Split | Clips | Share | Groups |
+|---|---|---|---|
+| train | 7,021 | 68.29% | 3,492 |
+| val | 1,618 | 15.74% | 857 |
+| test | 1,642 | 15.97% | 852 |
+
+- **5,341 source groups** exist in the ledger; **5,201** contain at least one kept
+  clip (140 groups lost entirely to exclusions).
 - Group keys (OA4): `urbansound8k/<fsID>`, `fsd50k/<source_id>`, `esc-50/<src_file>`,
   `babycry/donateacry:<uuid>` (170 subjects), `babycry/recanvo:<YYMMDD_HHMM>` (14 sessions).
 - **4 multi-class groups** — the W6 US8K fsIDs (180937, 77751, 106905, 176638) moved
@@ -54,28 +68,28 @@ Greedy per-class deficit assignment, `np.random.default_rng(42)`, groups atomic.
 
 | Class | train | val | test | n |
 |---|---|---|---|---|
-| Aircraft | 0.698 | 0.151 | 0.151 | 338 |
-| Alarm | 0.700 | 0.150 | 0.150 | 747 |
-| Baby_Crying | 0.702 | 0.148 | 0.150 | 533 |
-| Car_Engine | 0.673 | 0.160 | 0.167 | 1000 |
-| Dog_Bark | 0.701 | 0.149 | 0.149 | 950 |
+| Aircraft | 0.692 | 0.151 | 0.157 | 338 |
+| Alarm | 0.681 | 0.161 | 0.158 | 747 |
+| Baby_Crying | 0.730 | 0.131 | 0.139 | 533 |
+| Car_Engine | 0.674 | 0.146 | 0.180 | 1000 |
+| Dog_Bark | 0.683 | 0.166 | 0.151 | 950 |
 | Doorbell | 0.686 | 0.157 | 0.157 | 51 |
-| Drilling | 0.691 | 0.162 | 0.147 | 993 |
-| Footsteps | 0.698 | 0.151 | 0.151 | 562 |
-| Glass_Breaking | 0.699 | 0.150 | 0.150 | 492 |
-| Gunshot | 0.693 | 0.156 | 0.151 | 748 |
-| Help_Shouting | 0.700 | 0.150 | 0.150 | 493 |
-| Jackhammer | 0.682 | 0.142 | 0.176 | 999 |
-| Knocking | 0.700 | 0.150 | 0.150 | 380 |
-| Motorcycle | 0.698 | 0.151 | 0.151 | 238 |
-| Siren | 0.673 | 0.167 | 0.160 | 904 |
-| Train | 0.700 | 0.150 | 0.150 | 467 |
-| Vehicle_Horn | 0.700 | 0.150 | 0.150 | 386 |
-| **ALL** | **0.692** | **0.153** | **0.155** | **10,281** |
+| Drilling | 0.678 | 0.169 | 0.153 | 993 |
+| Footsteps | 0.687 | 0.155 | 0.158 | 562 |
+| Glass_Breaking | 0.695 | 0.152 | 0.152 | 492 |
+| Gunshot | 0.671 | 0.163 | 0.166 | 748 |
+| Help_Shouting | 0.696 | 0.154 | 0.150 | 493 |
+| Jackhammer | 0.673 | 0.148 | 0.179 | 999 |
+| Knocking | 0.682 | 0.166 | 0.153 | 380 |
+| Motorcycle | 0.685 | 0.147 | 0.168 | 238 |
+| Siren | 0.684 | 0.157 | 0.159 | 904 |
+| Train | 0.672 | 0.171 | 0.156 | 467 |
+| Vehicle_Horn | 0.671 | 0.179 | 0.150 | 386 |
+| **ALL** | **0.683** | **0.157** | **0.160** | **10,281** |
 
-**Max absolute deviation: 2.74 pp** (Car_Engine/Siren train 0.673; Jackhammer test
-0.176). Well inside the ±5 pp tolerance; the loose end comes from large atomic groups
-(e.g. one US8K fsID contributes 100 Siren clips).
+**Max absolute deviation: 3.00 pp** (Baby_Crying train 0.730, Car_Engine test
+0.180). Well inside the ±5 pp tolerance; the loose end comes from large atomic
+groups (e.g. one US8K fsID contributes 100 Siren clips).
 
 ## 3. Stage 3 — features (D2, D5, D6, D3/D7, OA1–OA3)
 
@@ -87,21 +101,30 @@ frames → `power_to_db(ref=1.0, amin=1e-10, top_db=None)` → scale to [0,1] wi
 
 | Split | Clips | Raw windows | Dropped (≤ −60 dBFS) | Kept windows |
 |---|---|---|---|---|
-| train | 7,110 | 351,405 | 24,855 | **326,550** |
-| val | 1,577 | 79,802 | 5,446 | **74,356** |
-| test | 1,594 | 79,129 | 5,104 | **74,025** |
+| train | 7,021 | 348,412 | 23,799 | **324,613** |
+| val | 1,618 | 80,554 | 5,724 | **74,830** |
+| test | 1,642 | 81,370 | 5,882 | **75,488** |
 | **total** | 10,281 | 510,336 | 35,405 (6.9%) | **474,931** |
 
-- Frozen dB range: **[−100.00, +34.16]** (floor is the `amin=1e-10` limit of absolute
+- Frozen dB range: **[−100.00, +33.84]** (floor is the `amin=1e-10` limit of absolute
   `power_to_db`; `top_db=None` so no per-clip clipping), recorded with all parameters in
-  `data/processed/feature_stats.json`.
+  `data/processed/feature_stats.json` (re-frozen from the D9 v2 train split).
 - Artifacts (float32, shape (N, 64, 5, 1); labels int64):
-  `features_train.npy` 398.6 MB, `features_val.npy` 90.8 MB, `features_test.npy`
-  90.4 MB + `labels_*.npy` + `window_index_*.csv` (clip_id, class, start_sample for
+  `features_train.npy` 415.5 MB, `features_val.npy` 95.8 MB, `features_test.npy`
+  96.6 MB + `labels_*.npy` + `window_index_*.csv` (clip_id, class, start_sample for
   every window).
-- Observed value ranges: train [0.0, 1.0], val [0.0, 0.9898], test [0.0, 0.9993].
+- Observed value ranges: train [0.0, 1.0], val [0.0, 1.0], test [0.0, 1.0].
 
-## 4. Stage 4 — D11 leakage gates
+## 4. Stage 4 — clip covariates (D9 v2 support)
+
+`features.compute_clip_covariates()` derives one row per kept clip —
+`processed_duration_s`, `rms_db`, `clip_feature_mean` (mel-dB mean over the clip,
+affine-equivalent to the raw mel-dB clip mean under the frozen bounds) — into
+`data/provenance/clip_covariates.csv` (10,281 rows). Feeds split phases 2–3 and the
+Phase 2B C1/C2 gate cells; skipped when the CSV already exists (it never needs
+refreshing when the split changes).
+
+## 5. Stage 5 — D11 leakage gates
 
 Details: `scripts/results/phase2a_gates.json`. **All passed:**
 
@@ -110,10 +133,10 @@ Details: `scripts/results/phase2a_gates.json`. **All passed:**
 | G1 | clip_id in exactly one split; split covers all 10,281 kept clips | PASS |
 | G2 | 5,201 groups each map to exactly one split; group_splits ≡ clip_splits | PASS |
 | G3 | SHA-256 disjoint across splits | PASS — **0 shared hashes** |
-| G4 | per-class + overall proportions within ±5 pp | PASS — max dev 2.74 pp |
+| G4 | per-class + overall proportions within ±5 pp | PASS — max dev 3.00 pp |
 | G5 | shapes (·,64,5,1), float32, finite ∈ [0,1], labels ∈ [0,17), window-index and stats counts consistent | PASS |
 
-## 5. Notes, deviations, open items
+## 6. Notes, deviations, open items
 
 - **OA4** (discovered during implementation, recorded in the approval entry): babycry
   group keys use correct UUID/session extraction (170 DonateACry subjects, 14 ReCANVo
@@ -129,14 +152,20 @@ Details: `scripts/results/phase2a_gates.json`. **All passed:**
   ledger, and manifest `local_path` rewritten project-relative — the repo is now
   self-contained (1.4 GB, `data/raw/*` stays gitignored).
 - `Smoke_Fire_Alarm` still has 0 clips (W2, UNRESOLVED); 17-class taxonomy is used.
-- §6 full gate (per-class distribution similarity + visual spectrogram panels) is not
-  part of D11 — proposed as Phase 2B before training.
+- **Phase 2B executed (2026-10-08):** the §6 gate (`scripts/run_phase2b_split_gate.py`)
+  initially FAILED the counts-only split (11 severe + 34 flag cells); D9 was amended to
+  the three-phase covariate-balanced split described in §2 and the pipeline re-run.
+  Verdict on the new split: **PASS WITH WARNINGS** (0 severe / 3 warnings, all other
+  checks PASS) — see `scripts/results/phase2b_split_gate/phase2b_report.md` and the
+  Change Log entries.
 
-## 6. Reproduce
+## 7. Reproduce
 
 ```powershell
-& ".\.venv\Scripts\python.exe" scripts\run_phase2a_preprocessing.py            # all stages, gates must PASS
+& ".\.venv\Scripts\python.exe" scripts\run_phase2a_preprocessing.py                      # stages 1-3 + 5 (covariates only if missing)
+& ".\.venv\Scripts\python.exe" scripts\run_phase2a_preprocessing.py --stage covariates   # cold start: build clip_covariates.csv, then re-run "all"
 & ".\.venv\Scripts\python.exe" scripts\run_phase2a_preprocessing.py --stage gates
+& ".\.venv\Scripts\python.exe" scripts\run_phase2b_split_gate.py                          # section 6 gate, exit 0 = PASS / PASS WITH WARNINGS
 & ".\.venv\Scripts\python.exe" scripts\run_phase2a_preprocessing.py --stage features --limit 50   # smoke
 ```
 

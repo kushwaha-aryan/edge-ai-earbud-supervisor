@@ -1,0 +1,74 @@
+{
+  "verdict": "PASS WITH WARNINGS",
+  "fail": [],
+  "warn": [
+    "C2: Jackhammer rms_db train vs test D=0.2087 flag",
+    "C2: Siren rms_db train vs val D=0.1557 flag",
+    "C2: Vehicle_Horn rms_db train vs val D=0.1653 flag"
+  ],
+  "max_proportion_deviation": 0.03,
+  "pooled": [
+    {
+      "split": "train",
+      "windows": 324613,
+      "feature_mean": 0.5497,
+      "feature_std": 0.112,
+      "delta_vs_train": 0.0
+    },
+    {
+      "split": "val",
+      "windows": 74830,
+      "feature_mean": 0.5508,
+      "feature_std": 0.1098,
+      "delta_vs_train": 0.0011
+    },
+    {
+      "split": "test",
+      "windows": 75488,
+      "feature_mean": 0.5502,
+      "feature_std": 0.1119,
+      "delta_vs_train": 0.0005
+    }
+  ],
+  "flags": 3,
+  "severe": 0,
+  "underpowered": 6,
+  "panels": 17,
+  "thresholds": {
+    "proportion": 0.05,
+    "ks_min_n": 15,
+    "duration_ks": [
+      0.2,
+      0.4
+    ],
+    "rms_ks": [
+      0.15,
+      0.3
+    ],
+    "feature_ks": [
+      0.15,
+      0.3
+    ],
+    "mean_delta": [
+      0.03,
+      0.08
+    ],
+    "silence_spread": [
+      0.02,
+      0.05
+    ],
+    "floor_frac": [
+      0.05,
+      0.2
+    ],
+    "ceil_frac": [
+      0.01,
+      0.05
+    ],
+    "pad": [
+      0.0,
+      0.1
+    ]
+  },
+  "generated_by": "run_phase2b_split_gate.py"
+}

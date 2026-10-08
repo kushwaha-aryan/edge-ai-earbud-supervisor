@@ -1,0 +1,142 @@
+{
+  "shared_hashes_across_splits": 0,
+  "proportions": {
+    "Aircraft": {
+      "train": 0.6982,
+      "val": 0.1509,
+      "test": 0.1509,
+      "n_clips": 338
+    },
+    "Alarm": {
+      "train": 0.7001,
+      "val": 0.1499,
+      "test": 0.1499,
+      "n_clips": 747
+    },
+    "Baby_Crying": {
+      "train": 0.7017,
+      "val": 0.1482,
+      "test": 0.1501,
+      "n_clips": 533
+    },
+    "Car_Engine": {
+      "train": 0.673,
+      "val": 0.16,
+      "test": 0.167,
+      "n_clips": 1000
+    },
+    "Dog_Bark": {
+      "train": 0.7011,
+      "val": 0.1495,
+      "test": 0.1495,
+      "n_clips": 950
+    },
+    "Doorbell": {
+      "train": 0.6863,
+      "val": 0.1569,
+      "test": 0.1569,
+      "n_clips": 51
+    },
+    "Drilling": {
+      "train": 0.6908,
+      "val": 0.1621,
+      "test": 0.147,
+      "n_clips": 993
+    },
+    "Footsteps": {
+      "train": 0.6975,
+      "val": 0.1512,
+      "test": 0.1512,
+      "n_clips": 562
+    },
+    "Glass_Breaking": {
+      "train": 0.6992,
+      "val": 0.1504,
+      "test": 0.1504,
+      "n_clips": 492
+    },
+    "Gunshot": {
+      "train": 0.6925,
+      "val": 0.1564,
+      "test": 0.1511,
+      "n_clips": 748
+    },
+    "Help_Shouting": {
+      "train": 0.6998,
+      "val": 0.1501,
+      "test": 0.1501,
+      "n_clips": 493
+    },
+    "Jackhammer": {
+      "train": 0.6817,
+      "val": 0.1421,
+      "test": 0.1762,
+      "n_clips": 999
+    },
+    "Knocking": {
+      "train": 0.7,
+      "val": 0.15,
+      "test": 0.15,
+      "n_clips": 380
+    },
+    "Motorcycle": {
+      "train": 0.6975,
+      "val": 0.1513,
+      "test": 0.1513,
+      "n_clips": 238
+    },
+    "Siren": {
+      "train": 0.6726,
+      "val": 0.167,
+      "test": 0.1604,
+      "n_clips": 904
+    },
+    "Train": {
+      "train": 0.7002,
+      "val": 0.1499,
+      "test": 0.1499,
+      "n_clips": 467
+    },
+    "Vehicle_Horn": {
+      "train": 0.6995,
+      "val": 0.1503,
+      "test": 0.1503,
+      "n_clips": 386
+    },
+    "ALL": {
+      "train": 0.6916,
+      "val": 0.1534,
+      "test": 0.155,
+      "n_clips": 10281
+    }
+  },
+  "max_abs_deviation": 0.0274,
+  "artifacts": {
+    "train": {
+      "windows": 326550,
+      "clips": 7110,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "val": {
+      "windows": 74356,
+      "clips": 1577,
+      "min": 0.0,
+      "max": 0.9898344874382019
+    },
+    "test": {
+      "windows": 74025,
+      "clips": 1594,
+      "min": 0.0,
+      "max": 0.9993496537208557
+    }
+  },
+  "db_range": [
+    -100.0,
+    34.162593841552734
+  ],
+  "passed": true,
+  "problems": [],
+  "generated_by": "run_phase2a_preprocessing.py",
+  "limit": null
+}

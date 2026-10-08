@@ -32,21 +32,43 @@ MODELS_DIR = RESULTS_DIR / "models"
 # ---------------------------------------------------------------------------
 SAMPLE_RATE = 16_000                # Hz, standard for speech/environmental audio
 WINDOW_SIZE_MS = 200                # analysis block length
-HOP_LENGTH = 512                    # 50% overlap at 16kHz
+WINDOW_SAMPLES = SAMPLE_RATE * WINDOW_SIZE_MS // 1000    # 3,200 samples per block
+WINDOW_STEP = WINDOW_SAMPLES // 2   # 1,600 samples between windows = 50% overlap (OA1, approved 2026-10-08)
+HOP_LENGTH = 512                    # STFT hop = 50% of N_FFT (OA3 comment fix; not the window step)
 N_FFT = 1024                        # FFT window size
 N_MELS = 64                         # mel bands
-SPEC_SHAPE = (N_MELS, 63, 1)        # fixed 2D feature grid, padded/truncated
+SPEC_FRAMES = (WINDOW_SAMPLES - N_FFT) // HOP_LENGTH + 1  # librosa center=False -> exactly 5 frames
+SPEC_SHAPE = (N_MELS, SPEC_FRAMES, 1)  # (64, 5, 1) per window, no padding (OA2, approved 2026-10-08)
 
 # ---------------------------------------------------------------------------
-# Trigger class mapping (Phase 1)
+# Trigger class mapping (finalized in Phase 1, ratified as D8 on 2026-10-08)
 # ---------------------------------------------------------------------------
-# The final supported trigger class list is NOT fixed yet. It is selected in
-# Phase 1 from dataset investigation against the six criteria in blueprint
-# §5.1. Populate these from src/data/class_map.py once Phase 1 decides the
-# class set; do not hard-code a class list before then.
-TRIGGER_CLASS_NAMES: tuple[str, ...] = ()   # finalized in Phase 1
-TRIGGER_CLASS_TO_ID: dict[str, int] = {}    # finalized in Phase 1
-NUM_TRIGGER_CLASSES: int | None = None      # finalized in Phase 1
+# 17 of 18 planned classes have audio (blueprint Change Log 2026-10-07).
+# Smoke_Fire_Alarm has 0 clips and remains candidate/UNRESOLVED: no
+# placeholder id is created and no smoke-alarm claim is made (§1.2, W2).
+# Ids are the alphabetical order of the names below, fixed here so that
+# label <-> index mapping never shifts for the rest of the project.
+TRIGGER_CLASS_NAMES: tuple[str, ...] = (
+    "Aircraft",
+    "Alarm",
+    "Baby_Crying",
+    "Car_Engine",
+    "Dog_Bark",
+    "Doorbell",
+    "Drilling",
+    "Footsteps",
+    "Glass_Breaking",
+    "Gunshot",
+    "Help_Shouting",
+    "Jackhammer",
+    "Knocking",
+    "Motorcycle",
+    "Siren",
+    "Train",
+    "Vehicle_Horn",
+)
+TRIGGER_CLASS_TO_ID: dict[str, int] = {name: i for i, name in enumerate(TRIGGER_CLASS_NAMES)}
+NUM_TRIGGER_CLASSES: int = len(TRIGGER_CLASS_NAMES)
 
 # Dataset requirements (blueprint §5.2, revised 2026-10-05):
 #   - each selected trigger class needs sufficient high-quality, diverse public
@@ -56,7 +78,9 @@ NUM_TRIGGER_CLASSES: int | None = None      # finalized in Phase 1
 #     investigated before reducing or compromising quality
 #   - a dataset is never added merely to reach a numerical target
 # There is deliberately no fixed per-class sample-count constant here.
-MAX_ZERO_PAD_FRACTION: float | None = None  # limited-padding threshold, decided in Phase 1
+# Phase 2A (2026-10-08): no zero-padding is used — every kept clip yields
+# whole 3,200-sample windows because clips < 0.5 s are excluded (D1).
+MAX_ZERO_PAD_FRACTION: float = 0.0  # limited-padding threshold (§5.2 padding policy)
 
 # Stratified split ratios (blueprint §6)
 TRAIN_RATIO = 0.70
@@ -64,12 +88,24 @@ VAL_RATIO = 0.15
 TEST_RATIO = 0.15
 
 # ---------------------------------------------------------------------------
+# Phase 2A preprocessing policy (approved 2026-10-08 — blueprint Change Log)
+# ---------------------------------------------------------------------------
+MANIFEST_PATH = DATA_DIR / "manifests" / "master_audio_manifest.csv"
+FILE_HEALTH_PATH = PROJECT_ROOT / "scripts" / "results" / "dataset_validation" / "file_health.csv"
+FEATURE_STATS_PATH = PROCESSED_DATA_DIR / "feature_stats.json"
+TRUNCATE_SECONDS = 15.0             # D2: keep only the first 15.0 s of each clip
+EXCLUDE_SHORTER_THAN_S = 0.5        # D1: drop clips flagged extreme_short (< 0.5 s)
+EXCLUDE_SILENT_DBFS = -60.0         # D4: drop clips flagged silent; also drops quiet windows
+DB_POWER_REF = 1.0                  # librosa.power_to_db reference
+SPLIT_SEED = 42                     # D9: deterministic greedy source-group split
+
+# ---------------------------------------------------------------------------
 # Model architecture (Phase 3) — final shape decided after Phase 1
 # ---------------------------------------------------------------------------
 # These are the original starting-candidate values from the source blueprint.
-# The output layer width must equal NUM_TRIGGER_CLASSES, which is not fixed yet,
-# and per-class weighting / recall targets are decided only after the class set
-# and dataset are established (blueprint §7 Phase 3).
+# The output layer width must equal NUM_TRIGGER_CLASSES (17 since Phase 1),
+# and per-class weighting / recall targets are decided only after the class
+# set and dataset are established (blueprint §7 Phase 3).
 CONV1_FILTERS = 16
 CONV2_FILTERS = 32
 CONV3_FILTERS = 64

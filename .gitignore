@@ -16,6 +16,7 @@ env/
 # --- Manually-downloaded / generated dataset & results (never-commit) ---
 data/raw/*
 data/processed/*
+!data/processed/feature_stats.json
 results/*
 !results/.gitkeep
 # ...but manifests/metadata ARE tracked:

@@ -5,7 +5,8 @@
 **Project type:** BTech AIML Final Year Project
 
 **Status:** Living specification. This document is the single source of truth for the project. It consolidates and
-supersedes `Edge_AI_Earbud_Project_Blueprint .pdf` and `Edge_AI_Earbud_Phase_Plan.pdf`, preserving their architecture,
+supersedes `Edge_AI_Earbud_Project_Blueprint .pdf` and `Edge_AI_Earbud_Phase_Plan.pdf` (archived under
+`docs/original_proposal/`, see §12), preserving their architecture,
 goals, terminology, and constraints, and records any intentional changes made during the project.
 
 **Revision:** Rev 3 — **Complete Context-Aware Acoustic Supervisor.** The system is specified as four conceptual
@@ -117,8 +118,9 @@ include, but are not limited to:
 
 > **Scope statement (must be honoured in all documentation and demos):** the system does **not** claim to detect
 > every possible environmental sound. The user **selects which supported acoustic events are enabled as triggers**
-> from the classes the trained model supports. The **final supported class list is not fixed yet** — it is
-> finalized in **Phase 1** from dataset investigation (see §5.1).
+> from the classes the trained model supports. The **final supported class list was ratified in Phase 1** as the
+> 17-class taxonomy in §5.1 (decision D8, 2026-10-08); the 18th candidate, `Smoke_Fire_Alarm`, remains
+> **UNRESOLVED** (no conservative public clips found).
 
 ### 1.3 Prior three-class framing — SUPERSEDED (historical record, retained)
 
@@ -269,7 +271,7 @@ The machine-learning architecture is **frozen and does not change** as documenta
 | Sample rate | 16 kHz |
 | Window | 200 ms, 50% overlap (step 1,600 samples) |
 | Features | Mel-spectrogram, 64 mel bands, FFT 1024, hop 512 |
-| Class count `N` | Finalized in **Phase 1** (§5.1) — not fixed here |
+| Class count `N` | **17**, ratified in Phase 1 (decision D8, 2026-10-08) — see §5.1 |
 
 **Do NOT replace the CNN with large pretrained/audio-transformer architectures** (e.g., AudioSet-style AST models
 at 86M+ parameters). Such models violate the edge/parameter budget. Hugging Face / pretrained audio models may be
@@ -396,10 +398,11 @@ frequency components for AI classification.
 
 ## 5. Dataset Architecture
 
-### 5.1 Candidate trigger classes and how the final class list is decided
+### 5.1 Trigger classes — ratified list and how the class list was decided
 
-The model is trained over a set of **specific environmental sound events**. The final class list is **NOT fixed
-yet**. It is determined during **Phase 1** against the following criteria:
+The model is trained over a set of **specific environmental sound events**. The final class list was **ratified in
+Phase 1 as the 17-class taxonomy below** (decision D8, 2026-10-08; see Change Log). It was determined against the
+following criteria:
 
 1. Availability of suitable **public datasets**
 2. **Audio quality** of the available material
@@ -409,8 +412,16 @@ yet**. It is determined during **Phase 1** against the following criteria:
 6. Ability to **evaluate the model reliably** (well-defined labels, realistic negatives, measurable metrics)
 
 Priority is given to classes for which **established public datasets already exist**. UrbanSound8K / ESC-50 are
-**not assumed to be automatically sufficient** — Phase 1 must investigate multiple public datasets and select the
+**not assumed to be automatically sufficient** — Phase 1 investigated multiple public datasets and selected the
 combination giving the strongest coverage for the chosen trigger classes.
+
+**Ratified class list (D8, 2026-10-08):** the alphabetical 17-class taxonomy recorded in `src/config.py`
+(`TRIGGER_CLASS_NAMES`): Aircraft, Alarm, Baby_Crying, Car_Engine, Dog_Bark, Doorbell, Drilling, Footsteps,
+Glass_Breaking, Gunshot, Help_Shouting, Jackhammer, Knocking, Motorcycle, Siren, Train, Vehicle_Horn.
+`Smoke_Fire_Alarm` (the intended 18th class) has **0 clips** and remains **candidate/UNRESOLVED** — no placeholder
+row exists and no smoke-alarm claim is made (W2; dataset acquisition entry in the Change Log). `Doorbell` (53 clips)
+and `Motorcycle` (238 clips) are the thinnest classes; additional sources may still be investigated per the flexible
+sufficiency rule (§5.2).
 
 ### 5.2 Dataset Requirements (AUTHORITATIVE — revised 2026-10-05)
 
@@ -701,6 +712,8 @@ Every material change to the original Blueprint + Phase Plan is recorded here. N
 
 | Date | Change | Reason | Status |
 |---|---|---|---|
+| 2026-10-10 | **Documentation audit corrections: original proposal PDFs archived, class list ratified, model-metric attribution fixed.** (1) Both original PDFs moved to `docs/original_proposal/` with a `STATUS.md` mapping every superseded claim (3-class scheme, `Dense(3)` head, "Recall on Class B ≥ 90%", <50 ms latency, raw-PCM/OS-bypass, 30-50 epochs, microcontroller portability, effort estimates) to its current blueprint/code position; blueprint §12 companion-source paths and README Source Documents updated. (2) "Final class list is not fixed yet" language superseded everywhere (§1.2 scope statement, §4 class count, §5.1 heading/text, README §5) by the ratified 17-class D8 taxonomy, with `Smoke_Fire_Alarm` restated as candidate/UNRESOLVED. (3) Metric attribution corrected so `baseline_A.keras` (window 0.4243 / macro-F1 0.4048; clip mean-softmax 0.4994/0.4689/0.5193) is no longer conflated with `lightweight_cnn.keras` (byte-identical to the epoch-1 weighted checkpoint `archive/weighted_epoch1.keras`: window 0.3804 / macro-F1 0.3861; clip mean-softmax 0.5414/0.5113/0.5321 — SHAs verified 2026-10-10); README §8 states all figures are validation-set only and no test-split (Phase 3B) result exists. (4) README §8 status refresh: preset A/D/E runs + YAMNet fit executed; only Phase 3B + longer training remain gated. (5) `src/config.py` docstring corrected from "Rev 2 / class list unset" to Rev 3 / ratified D8. Documentation-only; no source/data/model/eval artifacts changed; PDF archives are byte-preserved moves. | Standing rule 2 (correct mistakes, do not preserve them) + user-approved doc audit: the original PDFs and pre-ratification wording no longer describe the system; validation figures must be attributable to the exact model that produced them. | **Done (user approved 2026-10-10)** |
+| 2026-10-10 | **YAMNet fit-stage comparator clarified (correction to the 2026-10-09 scaffold entry below).** The executed YAMNet fit reports (`scripts/results/phase3a_embedding/{yamnet_demo, yamnet_fit2, yamnet_fit2_fixed}/report.md`) all record the CNN comparator as `scripts/results/phase3a_clip_eval/baseline_A (clip_mean_softmax level)` with figures 0.4994 / 0.4689 / 0.5193 — NOT `weighted_epoch1_fixed` as the scaffold entry intended. The baseline_A attribution is correct: `yamnet_demo` ran with the default comparator path. No artifacts were changed; this entry only removes the misleading "must reproduce weighted_epoch1_fixed" expectation. | Standing rule 2 (do not preserve mistakes): the executed run's own report is authoritative over the scaffold-time intent. | **Corrected 2026-10-10** |
 | 2026-10-10 | **Preset E added to the controlled experiments, trained, and evaluated fairly against presets A and D on the identical preset E validation clip set.** `src/config.py` PRESETS now A-E: E = 2000 ms window / 16,000-sample 50% step / FFT 1024 / hop 512 / 64 mel -> (64, 61, 1). Build via gitignored `scripts/tmp_build_preset_features.py` into `data/processed_preset_E/` (test split never opened; frozen dB bounds -100.0 .. 33.83852005004883): clips shorter than the 2000 ms window are EXCLUDED (no padding/looping) - train 26,945 / val 6,229 windows from 5,819 / 1,337 kept clips, 1,202 / 281 zero-window clips (preset D by contrast: 0 / 0). Build outputs verified: spec_shape (64, 61, 1), labels match window_index class_id, features in [0, 1], window/clip counts consistent. Trained `presetE_freqpool` (`--preset E --pool-freq-only --run-name presetE_freqpool --confirm-train`): 25,937 params under the 100K edge cap; best epoch 10 val_acc 0.4575 / val_loss 1.8254, train_acc 0.4576 / train_loss 1.6293; saved `data/models/presetE_freqpool.keras`. Fair clip evals: `scripts/run_phase3a_clip_eval.py` gains `--restrict-clips-to-preset R` (limits evaluation to preset R's `window_index_val.csv` clip set, masks features/labels/window_index and filters val_clips, prints per-class kept/total, notes the restriction in the report) so every model is compared on the identical 1,337-clip preset E val set (zero-window clips: none). clip_mean_softmax level: `presetE_freqpool` acc 0.4847 / macro-F1 0.4482 / wF1 0.5026 (6,229 windows); `baseline_A_onE` (preset A model, preset A analysis) acc 0.5123 / 0.4771 / 0.5302 (72,101 windows); `presetD_onE` (preset D model, preset D analysis) acc 0.5557 / 0.4927 / 0.5608 (28,470 windows). Result: on the identical clip set preset D keeps its lead and preset E trails. Reports: `scripts/results/phase3a_clip_eval/{presetE_freqpool, baseline_A_onE, presetD_onE}/`. | Standing rule 1: record the preset E decision, build, training and the fair clip-eval comparison at the time they were produced. | **Executed** |
 | 2026-10-09 | **YAMNet baseline fit driver: added `--compare-clip-eval` and hardened the fit-stage argument handling.** The fit stage referenced an undefined `args.compare_clip_eval` (AttributeError). New optional `--compare-clip-eval PATH` (default `scripts/results/phase3a_clip_eval/baseline_A`) is defined for `--stage fit`; a missing compare directory or summary file only prints a one-line skip notice and the report records "CNN comparator: skipped" - it never crashes the run. Removed `n_jobs` from `LogisticRegression` (no effect in scikit-learn 1.9, emits a FutureWarning). Statically checked every `args.<name>` against the `add_argument` definitions (stage, run-name, extract-dir, c, max-iter, compare-clip-eval - all match). The results directory is still created (`mkdir exist_ok=False`, refuses to reuse a run-name) only after the fit and all metric computation succeed, so a crash leaves no empty blocking run directory. Split, features, seeds and metrics untouched; py_compile green, ASCII-only; fit stage not run. | Standing rule 1: record the fit-stage argument/guard fixes at the time they were produced. | **Fixed - ready to run (fit stage still pending user authorization)** |
 | 2026-10-09 | **YAMNet baseline fit driver fixed for the installed scikit-learn (1.9.0).** `scripts/run_phase3a_embedding_baseline.py` `_run_fit()` no longer passes `multi_class="multinomial"` (removed from `LogisticRegression` in current scikit-learn; lbfgs is multinomial for multiclass by default, so behavior is unchanged) and now prints the installed scikit-learn version in the fit-stage console output. No other call in the fit stage depends on removed or changed scikit-learn arguments (checked: `StandardScaler`, `accuracy_score`/`f1_score`/`precision_score`/`recall_score` all use currently supported keyword arguments). Split, features, seeds and metrics untouched; fit stage still not run. py_compile green, ASCII-only. | Standing rule 1: record the fit-stage compatibility fix at the time it was produced. | **Fixed - ready to run (fit stage still pending user authorization)** |
@@ -725,12 +738,12 @@ Every material change to the original Blueprint + Phase Plan is recorded here. N
 
 *Future entries: whenever we use additional public data sources, finalize the trigger class list, adjust class mapping,
 
-**Open decisions pending user approval (2026-10-09):**
+**Open decisions pending user approval (2026-10-10):**
 
 | # | Subject | Awaiting |
 |---|---|---|
-| 1 | Run the two prepared training runs (`baseline_A` = preset A defaults; `presetD_freqpool` = preset D with `--pool-freq-only`) via `--confirm-train`, then their evaluation drivers. | user OK |
-| 2 | Run the YAMNet embedding `fit` stage (produces the frozen-embedding baseline report). | user OK |
+| 1 | ~~Run the two prepared training runs (`baseline_A`; `presetD_freqpool`) and their evaluation drivers.~~ **EXECUTED** (2026-10-10: `presetE_freqpool` also trained/evaluated fairly, see Change Log). | DONE |
+| 2 | ~~Run the YAMNet embedding `fit` stage.~~ **EXECUTED** (2026-10-10; validation side-by-side report in `scripts/results/phase3a_embedding/`, comparator = `baseline_A` clip-mean-softmax). | DONE |
 | 3 | Longer training than `DEFAULT_EPOCHS` 4 and any Phase 3B test-split evaluation. | user OK |
 | 4 | Adopt YAMNet or any external model as the on-device perception layer - currently CLOSED: not adopted, optional external baseline only per section 2.6. | default NO |
 alter hyperparameters, or change any requirement, record it here with the reason.*
@@ -745,7 +758,8 @@ alter hyperparameters, or change any requirement, record it here with the reason
    — Cited as inspiration for the context-aware ANC-adjustment problem setting. The project does **not** claim to
    reproduce its implementation, dataset, model, or experimental results.
 2. Andrew Ng — Machine Learning Specialization (foundations for the supervised-learning / image-input approach).
-3. Companion sources (initial, now superseded by this living document): `Edge_AI_Earbud_Project_Blueprint .pdf`,
+3. **Companion sources (initial, now superseded by this living document, archived under `docs/original_proposal/` with
+   a `STATUS.md` mapping their claims to the current system):** `Edge_AI_Earbud_Project_Blueprint .pdf`,
    `Edge_AI_Earbud_Phase_Plan.pdf`.
 
 ---

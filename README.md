@@ -115,9 +115,10 @@ Candidate classes include:
 | Baby or child crying | Home / family awareness |
 | Smoke alarm | Home safety awareness |
 
-**The final supported class list is not fixed yet.** It will be determined after dataset investigation in Phase 1,
-based on availability of suitable public datasets, audio quality, sufficient sample counts, class balance, relevance to
-earbud situational awareness, and the ability to evaluate the model reliably.
+**The supported class list was ratified in Phase 1 (2026-10-08, decision D8).** It is the alphabetical 17-class
+taxonomy in `TRIGGER_CLASS_NAMES` (`src/config.py`), finalized against dataset availability, audio quality,
+sufficient sample counts, class balance, relevance to earbud situational awareness, and the adequacy of evaluation.
+The 18th candidate, `Smoke_Fire_Alarm`, remains **unresolved** (0 conservative public clips were found; W2).
 
 The system does **not** claim to detect every possible environmental sound. Users enable only the supported acoustic
 events they want as triggers.
@@ -164,10 +165,11 @@ Local inference is intended to **reduce dependence on cloud processing** and to 
 
 ## 8. Project Status
 
-**Current state (2026-10-09):** dataset acquisition, validation, preprocessing, and the initial Phase 3A model
-training + validation analysis are EXECUTED. The Phase 3A controlled experiments (preset A / preset D training runs),
-the YAMNet embedding-baseline fit, and all test-split (Phase 3B) evaluation are prepared but NOT yet run - they are
-gated on explicit user authorization.
+**Current state (2026-10-10):** dataset acquisition, validation, preprocessing, and the Phase 3A model training +
+validation analysis are EXECUTED, including the controlled experiments (preset A, preset D and preset E with
+`--pool-freq-only`, clip-level evaluation) and the YAMNet frozen-embedding baseline (fit + report, experimental
+only). All Phase 3B **test-split** evaluation, longer-hyperparameter training, and Phases 4-6 remain **gated on
+explicit user authorization**.
 
 In phase order, what is actually in place:
 
@@ -180,12 +182,18 @@ In phase order, what is actually in place:
    dB bounds, source-group-aware covariate-balanced 70/15/15 split (train 7,021 / val 1,618 / test 1,642), all D11
    leakage gates PASS; Phase 2B distribution gate **PASS WITH WARNINGS** (warnings documented, not blocking).
 3. **Phase 3 - Model Design, Training & Evaluation** (`src/models/`, `src/training/`): locked 56,657-param CNN
-   trained (2026-10-08, saved `data/models/lightweight_cnn.keras`) and analysed on validation: val accuracy 0.4243,
-   macro-F1 0.4048 (74,830 windows); clip majority-vote mean-softmax accuracy 0.5414 / macro-F1 0.5113 /
-   weighted-F1 0.5321 (window macro-F1 0.3861 / accuracy 0.3804). Analysis presets B/C/D approved; preset D
-   train+val features built (train 127,398 / val 29,363 windows). YAMNet frozen-embedding baseline scaffolded and
-   its extract executed (8,639 clips, 87,985 frames, 0 failures) - experimental baseline only, **NOT adopted as the
-   perception layer**.
+   (Conv2D 16/32/64 → Dense 32 → Dropout 0.3 → softmax 17) trained and analysed on the locked 74,830-window
+   **validation** split (test split never opened). Documented models are **not** conflated:
+   - `data/models/baseline_A.keras` (preset A, locked CNN): val window accuracy **0.4243**, macro-F1 **0.4048**
+     (74,830 windows); clip mean-softmax 0.4994 / 0.4689 / 0.5193.
+   - `data/models/lightweight_cnn.keras` — byte-identical to `archive/weighted_epoch1.keras` (epoch-1 class-weighted
+     checkpoint): val window accuracy **0.3804**, macro-F1 **0.3861**; clip mean-softmax 0.5414 / 0.5113 / 0.5321.
+   Presets B/C/D/E approved; preset A remains the locked baseline. Preset D features built (train 127,398 / val
+   29,363 windows); preset D and E trained with `--pool-freq-only` (25,937 params, time axis preserved).
+   YAMNet frozen-embedding baseline scaffolded, extracted (8,639 clips, 87,985 frames, 0 failures), and **fit**:
+   validation-side-by-side logistic-head 0.7769 / 0.7426 / 0.7791 vs zero-shot 0.6273 / 0.5955 / 0.6135 vs the CNN
+   (`baseline_A` clips) 0.4994 / 0.4689 / 0.5193 — experimental baseline only, **NOT adopted as the perception
+   layer** (per §2.6).
 
 Splits must pass the mandatory validation gate (proportion + per-class distribution + leakage + spectrogram +
 artifact checks) before any training - Phase 2A/2B gates currently PASS. Phases 4-6 not started.
@@ -234,15 +242,18 @@ notebooks/          Jupyter notebooks for exploration & visualization
 scripts/            CLI entry points to run phases end-to-end
 tests/              Unit tests
 results/            Saved models, metrics, plots (gitignored)
-docs/               Additional documentation (design notes, guides, etc.)
+docs/               Documentation (see Source Documents below)
+  original_proposal/  Archived original PDFs + STATUS.md (superseded, historical)
 ```
 
 ## Source Documents
 
 - **`FINAL_PROJECT_BLUEPRINT.md`** — the project's **living specification** and single source of truth.
   Consolidates and supersedes the two PDFs; records every change with a reason.
-- `Edge_AI_Earbud_Project_Blueprint .pdf` — original architecture & viva defense guide (initial source)
-- `Edge_AI_Earbud_Phase_Plan.pdf` — original phase-wise implementation roadmap (initial source)
+- `docs/original_proposal/Edge_AI_Earbud_Project_Blueprint .pdf` — original architecture & viva defense guide
+  (superseded; archived with `docs/original_proposal/STATUS.md`)
+- `docs/original_proposal/Edge_AI_Earbud_Phase_Plan.pdf` — original phase-wise implementation roadmap
+  (superseded; archived with `docs/original_proposal/STATUS.md`)
 
 ## Scope Guardrails
 

@@ -2,15 +2,18 @@
 
 Single source of truth for project paths and fixed hyperparameters.
 Referenced by all other modules. Keep this file consistent with the
-FINAL_PROJECT_BLUEPRINT.md living specification (Rev 2).
+FINAL_PROJECT_BLUEPRINT.md living specification (Rev 3).
 
-Rev 2 note: the original fixed 3-class scheme (Class A continuous hum /
+Rev 3 note: the original fixed 3-class scheme (Class A continuous hum /
 Class B transient danger / Class C quiet) and the "exactly ~1,000 clips per
 class with equal final counts" dataset rule are SUPERSEDED by the
 user-selectable acoustic trigger architecture. See blueprint §1.3
 (historical record) and §5.2 (authoritative dataset requirements).
-The trigger class list and all per-class constants are therefore finalized
-in Phase 1 and are intentionally left unset here until then.
+
+The trigger class list was ratified in Phase 1 as the 17-class taxonomy in
+TRIGGER_CLASS_NAMES below (decision D8, 2026-10-08; blueprint §5.1 / Change
+Log). Smoke_Fire_Alarm, the intended 18th class, is candidate/UNRESOLVED
+(0 conservative public clips found, W2) and is intentionally absent here.
 """
 
 from pathlib import Path

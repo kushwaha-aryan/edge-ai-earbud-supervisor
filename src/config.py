@@ -100,6 +100,83 @@ DB_POWER_REF = 1.0                  # librosa.power_to_db reference
 SPLIT_SEED = 42                     # D9: deterministic greedy source-group split
 
 # ---------------------------------------------------------------------------
+# Analysis presets (Phase 3A controlled experiments, approved 2026-10-09)
+# ---------------------------------------------------------------------------
+# Each preset is a window/FFT/mel combination used to probe the confounds
+# found by the Phase 3A diagnostics (short time axis, dataset confounding,
+# 8 kHz Baby_Crying subset). Preset A is the locked Phase 2B baseline and
+#     must never change: it points at the data/processed root with the frozen
+#     dB bounds and spec shape (64, 5, 1) already recorded there. Presets B/C/D/E
+#     write and read their own directories only and reuse preset A's frozen
+#     global dB bounds and the same clip-level split manifest. All presets use
+# SAMPLE_RATE (16 kHz), quiet-window dropping (RMS <= -60 dBFS), and
+# librosa.melspectrogram with center=False; frames =
+# 1 + (window_samples - n_fft) // hop_length.
+PRESET_A = "A"
+PRESETS: dict[str, dict] = {
+    "A": {
+        "description": "locked baseline: 200 ms, 50% overlap, FFT 1024, hop 512, 64 Mel -> (64, 5, 1)",
+        "window_ms": 200,
+        "window_samples": 3_200,
+        "window_step_samples": 1_600,
+        "n_fft": 1024,
+        "hop_length": 512,
+        "n_mels": 64,
+        "spec_shape": (64, 5, 1),
+        "processed_dir": PROCESSED_DATA_DIR,
+        "feature_stats_path": FEATURE_STATS_PATH,
+    },
+    "B": {
+        "description": "1000 ms window (certainty across longer context), 50% overlap, FFT 1024, hop 512, 64 Mel -> (64, 30, 1)",
+        "window_ms": 1000,
+        "window_samples": 16_000,
+        "window_step_samples": 8_000,
+        "n_fft": 1024,
+        "hop_length": 512,
+        "n_mels": 64,
+        "spec_shape": (64, 30, 1),
+        "processed_dir": DATA_DIR / "processed_preset_B",
+        "feature_stats_path": DATA_DIR / "processed_preset_B" / "feature_stats.json",
+    },
+    "C": {
+        "description": "200 ms window with high spectral resolution (pitch detail), no overlap, FFT 512, hop 128, 64 Mel -> (64, 22, 1)",
+        "window_ms": 200,
+        "window_samples": 3_200,
+        "window_step_samples": 3_200,
+        "n_fft": 512,
+        "hop_length": 128,
+        "n_mels": 64,
+        "spec_shape": (64, 22, 1),
+        "processed_dir": DATA_DIR / "processed_preset_C",
+        "feature_stats_path": DATA_DIR / "processed_preset_C" / "feature_stats.json",
+    },
+    "D": {
+        "description": "500 ms window, 50% overlap, FFT 1024, hop 512, 64 Mel -> (64, 14, 1) by the extraction formula",
+        "window_ms": 500,
+        "window_samples": 8_000,
+        "window_step_samples": 4_000,
+        "n_fft": 1024,
+        "hop_length": 512,
+        "n_mels": 64,
+        "spec_shape": (64, 14, 1),
+        "processed_dir": DATA_DIR / "processed_preset_D",
+        "feature_stats_path": DATA_DIR / "processed_preset_D" / "feature_stats.json",
+    },
+    "E": {
+        "description": "2000 ms window, 50% overlap, FFT 1024, hop 512, 64 Mel -> (64, 61, 1) by the extraction formula",
+        "window_ms": 2000,
+        "window_samples": 32_000,
+        "window_step_samples": 16_000,
+        "n_fft": 1024,
+        "hop_length": 512,
+        "n_mels": 64,
+        "spec_shape": (64, 61, 1),
+        "processed_dir": DATA_DIR / "processed_preset_E",
+        "feature_stats_path": DATA_DIR / "processed_preset_E" / "feature_stats.json",
+    },
+}
+
+# ---------------------------------------------------------------------------
 # Model architecture (Phase 3) — final shape decided after Phase 1
 # ---------------------------------------------------------------------------
 # These are the original starting-candidate values from the source blueprint.

@@ -1,0 +1,5 @@
+variant,group,correct,total
+logistic,below_16000,31,32
+logistic,at_least_16000,34,38
+zero_shot,below_16000,29,32
+zero_shot,at_least_16000,24,38

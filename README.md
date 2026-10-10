@@ -164,19 +164,31 @@ Local inference is intended to **reduce dependence on cloud processing** and to 
 
 ## 8. Project Status
 
-**Documentation / architecture stage only. Dataset sourcing and model training have NOT yet been completed.**
+**Current state (2026-10-09):** dataset acquisition, validation, preprocessing, and the initial Phase 3A model
+training + validation analysis are EXECUTED. The Phase 3A controlled experiments (preset A / preset D training runs),
+the YAMNet embedding-baseline fit, and all test-split (Phase 3B) evaluation are prepared but NOT yet run - they are
+gated on explicit user authorization.
 
-No dataset has been downloaded, no preprocessing pipeline has been implemented, no model has been trained, and no
-results have been produced. The project is built strictly phase-by-phase:
+In phase order, what is actually in place:
 
-1. **Phase 1 — Dataset Investigation, Trigger-Class Definition & Class Mapping** (`data/`, `src/data/`)
-2. **Phase 2 — Signal Processing Pipeline** (`src/preprocessing/`)
-3. **Phase 3 — Model Design, Training & Evaluation** (`src/models/`, `src/training/`)
-4. **Phase 4 — Live Capture & Raw PCM Pipeline** (`src/inference/`)
-5. **Phase 5 — Trigger Policy, Temporal Verification & Context Response Engine** (`src/routing/`)
-6. **Phase 6 — Demo, Report & Deployment Polish** — demo shows the supervisor interface, audio-mode +
-   notification + warning responses, the user-confirmed quick action flow (presentation only), and profile
-   switching as a policy change
+1. **Phase 1 - Dataset Investigation, Trigger-Class Definition & Class Mapping** (`data/`, `src/data/`): 10,565
+   curated clips across 17 classes acquired (UrbanSound8K, FSD50K, ESC-50, owlgebra-ai/babycry), mappings fixed and
+   provenance manifest built; full read-only validation verdict **PASS WITH WARNINGS**; `Smoke_Fire_Alarm`
+   unresolved (0 conservative public clips found).
+2. **Phase 2 - Signal Processing Pipeline** (`src/preprocessing/`): EXECUTED - 10,281 kept clips (284 excluded per
+   audit flags), 15 s truncation, mono 16 kHz, 200 ms / 50%-overlap mel windows (64,5,1) scaled with train-frozen
+   dB bounds, source-group-aware covariate-balanced 70/15/15 split (train 7,021 / val 1,618 / test 1,642), all D11
+   leakage gates PASS; Phase 2B distribution gate **PASS WITH WARNINGS** (warnings documented, not blocking).
+3. **Phase 3 - Model Design, Training & Evaluation** (`src/models/`, `src/training/`): locked 56,657-param CNN
+   trained (2026-10-08, saved `data/models/lightweight_cnn.keras`) and analysed on validation: val accuracy 0.4243,
+   macro-F1 0.4048 (74,830 windows); clip majority-vote mean-softmax accuracy 0.5414 / macro-F1 0.5113 /
+   weighted-F1 0.5321 (window macro-F1 0.3861 / accuracy 0.3804). Analysis presets B/C/D approved; preset D
+   train+val features built (train 127,398 / val 29,363 windows). YAMNet frozen-embedding baseline scaffolded and
+   its extract executed (8,639 clips, 87,985 frames, 0 failures) - experimental baseline only, **NOT adopted as the
+   perception layer**.
+
+Splits must pass the mandatory validation gate (proportion + per-class distribution + leakage + spectrogram +
+artifact checks) before any training - Phase 2A/2B gates currently PASS. Phases 4-6 not started.
 
 Before any training, dataset splits must pass a mandatory validation gate: proportion check, per-class distribution
 similarity, duplicate/leakage check, representative spectrogram comparison across splits, and detection of excessive
@@ -203,9 +215,11 @@ emergency sounds, and it does not claim to control ANC on commercial earbuds unl
 ## Repository Layout
 
 ```
-data/               Raw + processed datasets (gitignored, not yet downloaded)
-  raw/              Downloaded dataset archives
-  processed/        Cached .npy spectrogram arrays (Phase 2)
+data/               Raw + processed datasets (gitignored)
+  raw/              Downloaded dataset archives (validated copies)
+  processed/        Cached .npy mel-spectrogram arrays (Phase 2, preset A)
+  processed_preset_D/  Preset D train+val mel arrays (Phase 3A controlled experiment)
+  embeddings/       YAMNet frozen-embedding cache (Phase 3A baseline)
   splits/           Stratified train/val/test split metadata (Phase 1)
   provenance/       Per-clip source/label/metadata records (Phase 1)
 src/                All source code

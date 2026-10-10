@@ -1,0 +1,14 @@
+Saved pipeline description - YAMNet frozen embeddings + logistic head
+
+run-name: yamnet_demo
+saved at (UTC): 2026-10-10 11:08:23
+extract dir: data\embeddings\yamnet\yamnet_extract (train 7021 / val 1618 clips)
+feature extractor: frozen YAMNet SavedModel (https://tfhub.dev/google/yamnet/1); per-clip mean of the 1024-d frame embeddings
+classifier head: sklearn StandardScaler fit on train, then scikit-learn multinomial LogisticRegression
+logistic params: C=1.0, max_iter=2000, solver=lbfgs, random_state=42
+scikit-learn: 1.9.0
+validation clip-level metrics: accuracy 0.7769, macro F1 0.7426, weighted F1 0.7791
+test split: never loaded
+class names: saved in index order as class_names.txt (17 classes)
+
+scaler.joblib and classifier.joblib are joblib-serialized; reload with joblib.load. Feeding the same standardized per-clip mean YAMNet embeddings reproduces the reported validation metrics.

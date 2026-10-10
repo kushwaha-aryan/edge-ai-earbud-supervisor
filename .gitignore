@@ -14,6 +14,9 @@ env/
 *.tflite
 
 # --- Manually-downloaded / generated dataset & results (never-commit) ---
+data/models/yamnet_hub/
+data/embeddings/
+data/processed_preset_*/
 data/raw/*
 data/processed/*
 !data/processed/feature_stats.json
@@ -27,6 +30,7 @@ results/*
 scripts/results/_validation/
 scripts/results/_tmp_*.py
 scripts/tmp_*.py
+scripts/tmp_prep_progress.md
 urbansound8k_header.bin
 
 # --- Notebooks (ignore checkpoints) ---

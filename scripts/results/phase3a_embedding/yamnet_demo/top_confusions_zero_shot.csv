@@ -1,0 +1,16 @@
+true_class,predicted_class,count
+Jackhammer,Car_Engine,88
+Drilling,Car_Engine,51
+Car_Engine,Train,29
+Alarm,Siren,25
+Car_Engine,Aircraft,23
+Drilling,Aircraft,21
+Alarm,Vehicle_Horn,18
+Footsteps,Knocking,16
+Alarm,Doorbell,15
+Alarm,Aircraft,14
+Alarm,Glass_Breaking,14
+Drilling,Motorcycle,13
+Drilling,Train,13
+Help_Shouting,Baby_Crying,13
+Motorcycle,Car_Engine,13

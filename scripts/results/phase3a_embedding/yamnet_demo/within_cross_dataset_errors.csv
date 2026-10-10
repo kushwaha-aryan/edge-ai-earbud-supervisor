@@ -1,0 +1,3 @@
+variant,within,cross,excluded,misclassified
+logistic,210,151,0,361
+zero_shot,338,265,0,603
